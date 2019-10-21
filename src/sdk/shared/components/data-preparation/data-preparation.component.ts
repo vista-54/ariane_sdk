@@ -8,7 +8,7 @@ declare const document;
     styleUrls: ['./data-preparation.component.scss'],
 })
 export class DataPreparationComponent implements OnInit, OnDestroy {
-    inactiveImage = '../assets/auth/shopping-cart-2.svg';
+    inactiveImage = '../assets/sdk/shopping-cart-2.svg';
     interval: any;
 
     constructor() {
@@ -22,7 +22,7 @@ export class DataPreparationComponent implements OnInit, OnDestroy {
     }
 
     startInterval() {
-        const activeImage = '../assets/auth/shopping-cart-1.svg';
+        const activeImage = '../assets/sdk/shopping-cart-1.svg';
         const images = document.getElementsByClassName('cart');
         let counter = 0;
         this.interval = setInterval(() => {

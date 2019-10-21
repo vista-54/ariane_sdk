@@ -34,7 +34,8 @@ import {HttpClientModule} from '@angular/common/http';
         HttpClientModule
     ],
     entryComponents: [
-        AboutModalComponent
+        AboutModalComponent,
+        DataPreparationComponent
     ],
     providers: [
         SdkService,
@@ -42,5 +43,4 @@ import {HttpClientModule} from '@angular/common/http';
     ]
 })
 export class SdkModule {
-    debugger
 }
