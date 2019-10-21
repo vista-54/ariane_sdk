@@ -1,5 +1,5 @@
 # Ariane SDK
-The Ariane SDK give ability to developer call access limited functional without any authorizations steps
+The Ariane SDK gives ability to developer call access limited functional without any authorizations steps
 # Description
 The src folder consist of 2 main folders: sdk and assets.
 SDK this is a TypeScript module with all logic, assets folder has images.
@@ -34,3 +34,4 @@ git clone https://github.com/vista-54/ariane_sdk.git
  
  Exit button doesn't work on iOS. The shut down of app programmatically is disallowed by apple:
  https://developer.apple.com/library/archive/qa/qa1561/_index.html
+
