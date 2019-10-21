@@ -23,3 +23,10 @@ git clone https://github.com/vista-54/ariane_sdk.git
 4. Call module. Email and Supplier ID are required params.
 
 ```http://localhost/sdk?email={{email}}&supplier_id={{supplierID}}```
+
+5. For correct works with tutorial page with iOS add to config.xml:
+ ```
+ <allow-intent href="http://*/*" launch-external="yes" />
+ <allow-intent href="https://*/*" launch-external="yes" />
+ <allow-navigation href="*" />
+   ```
