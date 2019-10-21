@@ -20,7 +20,7 @@ git clone https://github.com/vista-54/ariane_sdk.git
 
 ``` {path: 'sdk', loadChildren: () => import('./sdk/sdk.module').then(m => m.SdkModule)}```
 
-4. Call module. Email and Supplier ID are required params.
+4. Call module. Email and Supplier ID are required params. Please send it as queryParams like above:
 
 ```http://localhost/sdk?email={{email}}&supplier_id={{supplierID}}```
 
