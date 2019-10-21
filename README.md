@@ -1,0 +1,25 @@
+# Ariane SDK
+The Ariane SDK give ability to developer call access limited functional without any authorizations steps
+# Description
+The src folder consist of 2 main folders: sdk and assets.
+SDK this is a TypeScript module with all logic, assets folder has images.
+# Get Started
+1. Run command:
+```
+git clone https://github.com/vista-54/ariane_sdk.git
+```
+2. Copy sdk folder to your main app folder:
+```
+* src/
+  * app/
+      * sdk(here)
+      * assets/
+          * sdk(assets)
+```
+3. Add Sdk module to app app-routing.module.ts:
+
+``` {path: 'sdk', loadChildren: () => import('./sdk/sdk.module').then(m => m.SdkModule)}```
+
+4. Call module. Email and Supplier ID are required params.
+
+```http://localhost/sdk?email={{email}}&supplier_id={{supplierID}}```
