@@ -1,0 +1,55 @@
+.change {
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.progress_bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  ion-progress-bar {
+    height: 10px;
+    border-radius: 100px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #ededed;
+    --buffer-background: transparent;
+  }
+  .arr {
+    padding: 4px;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 0;
+    background: white;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: #ededed;
+    z-index: 9999;
+
+  }
+  .grow_up {
+    visibility: visible;
+    --progress-background: #abcc56;
+    background-color: #abcc56;
+
+  }
+  .grow_down {
+    visibility: visible;
+    --progress-background: red;
+    background-color: red;
+  }
+  .grow_up_arrow {
+    visibility: visible;
+    transform: rotate(180deg);
+  }
+}

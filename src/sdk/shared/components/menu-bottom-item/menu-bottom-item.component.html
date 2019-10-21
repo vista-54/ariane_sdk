@@ -1,0 +1,13 @@
+<div class="con">
+    <div *ngIf="route" [routerLink]="route" routerLinkActive="active_route"
+         [appActiveTab]="activeIcon" [inactiveTab]="inactiveIcon">
+        <img [src]="inactiveIcon">
+        <label slot="end">{{title}}</label>
+    </div>
+
+    <div *ngIf="!route">
+        <img [src]="inactiveIcon">
+        <label slot="end">{{title}}</label>
+    </div>
+</div>
+

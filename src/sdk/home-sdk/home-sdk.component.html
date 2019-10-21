@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title><span>HPT Ariane</span><span>Collaboration Platform</span></ion-title>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <p class="title">
+        <span class="customer">Welcome, {{header.firstname}} {{header.lastname}}</span>
+        <span class="company">{{header.company}}</span>
+    </p>
+    <div class="column">
+        <div class="row">
+            <div class="widget" [ngClass]="widgets[0].end?'':'blur'">
+                <div class="header">
+                    <span><img src="assets/sdk/market-share.svg"></span>
+                    <span>MARKET<br> SHARE</span>
+                    <span></span>
+                </div>
+                <app-chart-semi-circle [growth]="widgets[0].end" [unit]="widgets[0].unit"></app-chart-semi-circle>
+                <app-change-progress [growth]="widgets[0].growth"></app-change-progress>
+            </div>
+            <div class="widget" [ngClass]="widgets[1].end?'':'blur'">
+                <div class="header">
+                    <span><img src="assets/sdk/sales-value.svg"></span>
+                    <span>SALES<br> VALUE</span>
+                    <span></span>
+                </div>
+                <div class="value">{{widgets[1].end}} {{widgets[1].unit}}</div>
+                <app-change-progress [growth]="widgets[1].growth"></app-change-progress>
+            </div>
+        </div>
+        <div class="row">
+            <div class="widget" [ngClass]="widgets[2].end?'':'blur'">
+                <div class="header">
+                    <span><img
+                            src="assets/sdk/icon_service_level.svg"></span><span>SERVICE<br> LEVEL</span><span></span>
+                </div>
+                <app-chart-semi-circle [growth]="widgets[2].end" [unit]="widgets[2].unit"></app-chart-semi-circle>
+                <app-change-progress [growth]="widgets[2].growth"></app-change-progress>
+            </div>
+            <div class="widget" [ngClass]="widgets[3].end?'':'blur'">
+                <div class="header"><span><img
+                        src="assets/sdk/icon_stock_days.svg"></span><span>STOCK<br> DAYS</span><span></span></div>
+                <div class="value">{{widgets[3].end}} {{widgets[3].unit}}</div>
+                <app-change-progress [growth]="widgets[3].growth"></app-change-progress>
+            </div>
+        </div>
+        <div class="row">
+            <div class="widget" [ngClass]="widgets[4].end?'':'blur'">
+                <div class="header"><span slot="start"><img
+                        src="assets/sdk/icon_number_of_bucket.svg"></span>
+                    <span>NUMBER<br> OF BUCKET</span><span></span>
+                </div>
+                <div class="value">{{widgets[4].end}} {{widgets[4].unit}}</div>
+                <app-change-progress [growth]="widgets[4].growth"></app-change-progress>
+            </div>
+            <div class="widget" [ngClass]="widgets[5].end?'':'blur'">
+                <div class="header"><span><img src="assets/sdk/icon_promotion.svg"></span><span>PROMOTION<br> INTENSITY</span><span></span>
+                </div>
+                <app-chart-semi-circle [growth]="widgets[5].end" [unit]="widgets[5].unit"></app-chart-semi-circle>
+                <app-change-progress [growth]="widgets[5].growth"></app-change-progress>
+            </div>
+        </div>
+    </div>
+</ion-content>

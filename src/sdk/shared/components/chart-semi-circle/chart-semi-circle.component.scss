@@ -1,0 +1,43 @@
+.container_chart {
+  width: 68%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 6px;
+  position: relative;
+  .growth {
+    border: 0.5px solid rgb(185, 184, 185);
+    border-radius: 5px;
+    padding: 3px;
+    z-index: 99999;
+    position: absolute;
+    background: white;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+  }
+  .minus {
+    position: absolute;
+    left: 8px;
+    bottom: 0;
+    font-size: 10px;
+  }
+  .plus {
+    position: absolute;
+    right: 8px;
+    bottom: 0;
+    font-size: 10px;
+  }
+  .arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -4px;
+    height: 35px;
+    transform-origin: 10px 26px;
+  }
+}
