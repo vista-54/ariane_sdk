@@ -13,8 +13,8 @@ git clone https://github.com/vista-54/ariane_sdk.git
 * src/
   * app/
       * sdk(here)
-      * assets/
-          * sdk(assets)
+  * assets/
+      * sdk(assets)
 ```
 3. Add Sdk module to app app-routing.module.ts:
 
