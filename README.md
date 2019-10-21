@@ -30,3 +30,7 @@ git clone https://github.com/vista-54/ariane_sdk.git
  <allow-intent href="https://*/*" launch-external="yes" />
  <allow-navigation href="*" />
    ```
+ # Note
+ 
+ Exit button doesn't work on iOS. The shut down of app programmatically is disallowed by apple:
+ https://developer.apple.com/library/archive/qa/qa1561/_index.html
