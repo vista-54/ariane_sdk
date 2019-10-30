@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {ModalController} from '@ionic/angular';
+import {ModalController, Platform} from '@ionic/angular';
 import {AboutModalComponent} from './shared/components/about-modal/about-modal.component';
 
 export declare const navigator;
@@ -12,14 +12,16 @@ export declare const navigator;
     styleUrls: ['./sdk.component.scss'],
 })
 export class SdkComponent implements OnInit {
+    public isOs = false;
 
-
-    constructor(private router: Router, private modalController: ModalController) {
+    constructor(private router: Router, private modalController: ModalController, public platform: Platform) {
 
     }
 
     ngOnInit() {
         console.log('init');
+        this.isOs = this.platform.is('ios');
+
     }
 
     leave() {
@@ -27,6 +29,7 @@ export class SdkComponent implements OnInit {
     }
 
     about() {
+
         this.presentModal(AboutModalComponent);
     }
 

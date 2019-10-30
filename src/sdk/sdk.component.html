@@ -2,7 +2,7 @@
     <ion-router-outlet></ion-router-outlet>
 </ion-content>
 <ion-footer>
-    <app-menu-bottom-item title="Exit" (click)="leave()"
+    <app-menu-bottom-item *ngIf="!isOs" title="Exit" (click)="leave()"
                           activeIcon="assets/sdk/exit.svg"
                           inactiveIcon="assets/sdk/exit.svg">
     </app-menu-bottom-item>
