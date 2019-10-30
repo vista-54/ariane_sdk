@@ -64,6 +64,8 @@ ion-header {
 
 ion-content {
   --offset-top: 0px !important;
+  --padding-start: 8px;
+  --padding-end: 8px;
   .title {
     display: flex;
     justify-content: space-between;
