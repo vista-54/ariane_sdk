@@ -1,0 +1,64 @@
+<app-header></app-header>
+<ion-content>
+    <div class="wrapper">
+        <div class="info">{{'more.title'|translate}}</div>
+        <div class="progress">
+            <div class="progress_item submitted "><img src="../assets/auth/info_done.svg"><br><span>{{'info.title'|translate}}</span>
+            </div>
+            <span class="connect submitted"></span>
+            <div class="progress_item current"><span>2</span><br><span>{{'more.title'|translate}}</span></div>
+            <span class="connect inactive"></span>
+            <div class="progress_item inactive"><span>3</span><br><span>{{'options.title'|translate}}</span></div>
+        </div>
+        <form class="form" [formGroup]="credentials" (submit)="next()" (keyup.enter)="next()">
+            <ion-item>
+                <ion-label position="stacked">{{'info.supplierId'|translate}}</ion-label>
+                <ion-input readonly formControlName="supplier_id"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"> {{'more.company'|translate}}</ion-label>
+                <ion-input readonly formControlName="company"></ion-input>
+            </ion-item>
+            <div class="item_rows">
+                <ion-item>
+                    <ion-label position="stacked">{{'more.firstname'|translate}}</ion-label>
+                    <ion-input readonly formControlName="firstname"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">{{'more.lastname'|translate}}</ion-label>
+                    <ion-input readonly formControlName="lastname"></ion-input>
+                </ion-item>
+            </div>
+            <div class="item_rows">
+                <ion-item>
+                    <ion-label position="stacked">{{'more.position'|translate}}</ion-label>
+                    <ion-input readonly formControlName="position"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">{{'more.subscription'|translate}}</ion-label>
+                    <ion-input readonly formControlName="subscription"></ion-input>
+                </ion-item>
+            </div>
+            <ion-item>
+                <ion-label position="stacked">{{'more.email'|translate}}</ion-label>
+                <ion-input readonly type="email" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"> {{'more.phone'|translate}}</ion-label>
+                <ion-input readonly formControlName="phone"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked"> {{'more.code'|translate}}</ion-label>
+                <ion-input #code type="tel" formControlName="token"></ion-input>
+            </ion-item>
+            <div>
+                <p class="note request" (click)="requestToken()">{{'more.request'|translate}}</p>
+            </div>
+            <ion-button [disabled]="!credentials.valid" expand="block" type="submit">
+                {{'info.next'|translate}} >>
+            </ion-button>
+        </form>
+
+    </div>
+
+</ion-content>

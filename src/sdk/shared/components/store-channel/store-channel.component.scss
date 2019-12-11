@@ -1,0 +1,14 @@
+.wrapper {
+  padding: 0 16px;
+  .subtitle {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 12px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2.08;
+    }
+  }
+}

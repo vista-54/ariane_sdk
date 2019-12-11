@@ -1,0 +1,69 @@
+
+ion-content {
+  --padding-start: 0;
+  --padding-end: 0;
+  .title {
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0 8px;
+  }
+
+  .row_container {
+    margin-top: 10px;
+
+    .retailer {
+      width: 100% !important;
+      background-color: rgb(13, 67, 111);
+    }
+    .channel {
+      background-color: rgb(94, 143, 175);
+    }
+    .store {
+      background-color: rgb(159, 189, 60);
+    }
+    .category {
+      background-color: rgb(228, 117, 0);
+    }
+    .subcategory {
+      background-color: rgb(214, 66, 38);
+    }
+    .brand {
+      background-color: rgb(141, 0, 53);
+    }
+    .product {
+      background-color: rgb(32, 150, 204);
+    }
+    .item {
+      padding-top: 30px;
+      display: flex;
+      padding-bottom: 20px;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-size: 17px;
+      width: 50%;
+      img {
+        height: 50px;
+      }
+      span {
+        padding-top: 5px;
+      }
+    }
+    .row {
+      display: flex;
+    }
+
+  }
+  ion-button {
+    margin: 6px;
+    padding: 0;
+  }
+
+}

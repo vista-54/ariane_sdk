@@ -1,0 +1,44 @@
+<app-header></app-header>
+<ion-content>
+    <div class="wrapper">
+        <div class="info">{{'options.title'|translate}}</div>
+        <div class="progress">
+            <div class="progress_item submitted "><img src="../assets/auth/info_done.svg"><br><span>{{'info.title'|translate}}</span></div>
+            <span class="connect submitted"></span>
+            <div class="progress_item submitted"><img src="../assets/auth/info_done.svg"><br><span>{{'more.title'|translate}}</span>
+            </div>
+            <span class="connect submitted"></span>
+            <div class="progress_item current"><span>3</span><br><span>{{'options.title'|translate}}</span></div>
+        </div>
+    </div>
+    <form>
+        <hr>
+        <ion-item lines="none">
+            <ion-label>{{'options.q1'|translate}}<br>
+                {{'options.q12'|translate}}
+            </ion-label>
+            <ion-toggle slot="end" [(ngModel)]="settings[0].value" name="settings[0].name"></ion-toggle>
+        </ion-item>
+        <hr>
+        <ion-item lines="none">
+            <ion-label>{{'options.q2'|translate}}<br>
+                {{'options.q22'|translate}}
+            </ion-label>
+            <ion-toggle slot="end" [(ngModel)]="settings[1].value" name="settings[1].name"></ion-toggle>
+        </ion-item>
+        <hr>
+        <ion-item lines="none">
+            <ion-label>{{'options.q3'|translate}}<br>{{'options.q32'|translate}}
+
+            </ion-label>
+            <ion-toggle slot="end" [(ngModel)]="settings[2].value" name="settings[2].name"></ion-toggle>
+        </ion-item>
+        <hr>
+    </form>
+    <div class="next_container">
+        <ion-button expand="block" (click)="next()">
+            {{'options.button'|translate}} >>
+        </ion-button>
+    </div>
+
+</ion-content>

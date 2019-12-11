@@ -1,0 +1,16 @@
+<ion-header class="modalHeader">
+    {{'common.warning'|translate}}
+</ion-header>
+<ion-content>
+    <div class="text" [appModalResize]>
+
+        <p>{{'m_todonotsaved.p1'|translate}}</p>
+        <br>
+    </div>
+    <div class="button_block">
+        <ion-button class="okButton" expand="block" (click)="dismiss(true)"> {{'common.yes'|translate}}
+        </ion-button>
+        <ion-button class="okButton" expand="block" (click)="dismiss(false)"> {{'common.no'|translate}}
+        </ion-button>
+    </div>
+</ion-content>

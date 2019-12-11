@@ -1,0 +1,18 @@
+<ion-header class="modalHeader">
+    Access Denied!
+</ion-header>
+<ion-content slots="fixed" [appModalResize]>
+    <div class="text">
+        <p>Your subscription level is “{{userSubscription}}” which has limited access. To be able to get access the “{{target}}”
+            feature, you must upgrade your subscription level to {{targetSub}}
+        </p>
+        <br>
+        <p>
+            Please go to
+            <a href="https://app.hptariane.com/subscriptions">https://app.hptariane.com/subscriptions</a>
+            to upgrade your subscription.
+        </p>
+    </div>
+    <ion-button class="okButton" expand="block" (click)="dismiss()">{{'m_token_invalid.button'|translate}}</ion-button>
+
+</ion-content>

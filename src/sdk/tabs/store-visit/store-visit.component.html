@@ -1,0 +1,25 @@
+<app-header-inside-tabs></app-header-inside-tabs>
+
+<ion-content>
+    <div class="wrapper">
+        <p class="title">
+            {{'store_visit.title'|translate}}
+        </p>
+    </div>
+    <app-store-channel [store]="data.name" [channel]="data.channel"></app-store-channel>
+
+    <div class="row_container">
+        <div class="item channel" (click)="scope('channel')">
+            <img src="../assets/datascope/icon_channel.svg">
+            <span class="title"><span>{{'store_visit.channel'|translate}}</span><span>{{data.channel}}</span></span>
+        </div>
+        <div class="item store" (click)="scope('store')">
+            <img src="../assets/datascope/icon_store.svg">
+            <span class="title"><span>{{'store_visit.store'|translate}}</span><span>{{data.name}}</span></span>
+        </div>
+    </div>
+    <ion-button expand="block" [disabled]="data.store_id==='Not selected'||!data.store_id" (click)="confirm()">
+        {{'store_visit.confirm'|translate}}
+    </ion-button>
+
+</ion-content>

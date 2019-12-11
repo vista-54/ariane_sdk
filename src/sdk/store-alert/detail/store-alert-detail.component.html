@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title><span>HPT Ariane</span><span>Collaboration Platform</span></ion-title>
+        <ion-buttons slot="end">
+            <!--For android align-->
+            <ion-button style="opacity: 0;height: 0;">
+                Home
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <app-alert-title [class]="params[prop.alert_code].style" [label]="'alert_detail.title'|translate"
+                     [title]="params[prop.alert_code].title" [icon]="params[prop.alert_code].icon"
+    ></app-alert-title>
+    <app-store-channel [store]="prop.store" [channel]="prop.channel"></app-store-channel>
+    <table>
+        <thead>
+        <tr>
+            <th class="col">{{'alert_detail.code'|translate}}</th>
+            <th class="col">{{'alert_detail.description'|translate}}</th>
+            <th class="col">{{'alert_detail.'+prop.alert_code|translate}}</th>
+            <th class="action"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of prop.products">
+            <td>{{product.item_id}}</td>
+            <td>{{product.article}}</td>
+            <td>{{product.value}}</td>
+            <td (click)="createToDo(product)"><img src="../assets/todo/create_todo_icon.svg"></td>
+        </tr>
+        </tbody>
+    </table>
+    <ion-button expand="block ok" routerLink="/sdk/tabs/home">{{'alert_main.home'|translate}}</ion-button>
+
+</ion-content>

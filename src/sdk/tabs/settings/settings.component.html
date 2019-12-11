@@ -1,0 +1,82 @@
+<app-header-inside-tabs></app-header-inside-tabs>
+
+<ion-content>
+    <div class="wrapper">
+        <div class="info">{{'settings.title'|translate}}</div>
+        <div class="subinfo">{{'settings.subtitle'|translate}}</div>
+        <form class="form" [formGroup]="credentials">
+            <ion-item>
+                <ion-label position="stacked">{{'info.supplierId'|translate}}</ion-label>
+                <ion-input readonly formControlName="supplier_id"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">{{'more.company'|translate}}</ion-label>
+                <ion-input readonly formControlName="company"></ion-input>
+            </ion-item>
+            <div class="item_rows">
+                <ion-item>
+                    <ion-label position="stacked">{{'more.firstname'|translate}}</ion-label>
+                    <ion-input readonly formControlName="firstname"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">{{'more.lastname'|translate}}</ion-label>
+                    <ion-input readonly formControlName="lastname"></ion-input>
+                </ion-item>
+            </div>
+            <ion-item>
+                <ion-label position="stacked">{{'more.email'|translate}}</ion-label>
+                <ion-input readonly formControlName="email"></ion-input>
+            </ion-item>
+            <ion-label class="icon_label">{{'settings.team'|translate}} <img (click)="yourTeam()"
+                                                                             src="../assets/icon_info.svg">
+            </ion-label>
+            <div class="item_rows">
+                <ion-item>
+                    <ion-label position="stacked">{{'more.subscription'|translate}}</ion-label>
+                    <ion-input readonly formControlName="subscription"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">{{'settings.renewal'|translate}}</ion-label>
+                    <ion-datetime readonly formControlName="renew_date" displayFormat="MM/DD/YY"
+                                  placeholder="Select Date"></ion-datetime>
+                </ion-item>
+            </div>
+        </form>
+    </div>
+    <form class="access">
+        <div class="subinfo">{{'settings.access'|translate}}</div>
+        <hr>
+        <ion-item lines="none">
+            <ion-label>
+                {{'settings.geo'|translate}}
+            </ion-label>
+            <ion-toggle [(ngModel)]="settings[0].value" name="settings[0].name" slot="end"></ion-toggle>
+        </ion-item>
+        <hr>
+        <ion-item lines="none">
+            <ion-label>{{'settings.store_alerts'|translate}}
+            </ion-label>
+            <ion-toggle [(ngModel)]="settings[1].value" name="settings[1].name" slot="end"></ion-toggle>
+        </ion-item>
+        <hr>
+        <ion-item lines="none">
+            <ion-label>{{'settings.upload_alert'|translate}}
+            </ion-label>
+            <ion-toggle [(ngModel)]="settings[2].value" name="settings[2].name" slot="end"></ion-toggle>
+        </ion-item>
+        <hr>
+    </form>
+    <div class="wrapper">
+        <form>
+            <ion-item>
+                <ion-label position="stacked">{{'settings.lang'|translate}}</ion-label>
+                <ion-input [(ngModel)]="lng" name="lng" disabled="true"></ion-input>
+            </ion-item>
+        </form>
+    </div>
+    <ion-button expand="block" type="submit" (click)="update()">
+        {{'settings.save'|translate}}
+    </ion-button>
+
+
+</ion-content>

@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="sdk/tabs/store-visit"></ion-back-button>
+        </ion-buttons>
+        <ion-title><span>HPT Ariane</span><span>Collaboration Platform</span></ion-title>
+        <ion-buttons slot="end">
+            <!--For android align-->
+            <ion-button style="opacity: 0;height: 0;">
+                Home
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="wrapper">
+        <p class="title">
+            {{'alert_main.title'|translate}}
+        </p>
+    </div>
+    <app-store-channel [store]="params.name" [channel]="params.channel"></app-store-channel>
+
+    <table class="alert_title" border=0 celpadding=0 cellspaceing=0>
+        <tbody>
+        <tr [ngClass]="alerts[item.name].style" *ngFor="let item of prop.result"
+            [routerLink]="['/sdk/store-alert/detail',alerts[item.name].detail]">
+            <td>
+                <div class="logo_title">
+                    <img [src]="alerts[item.name].icon">
+                    <div class="text_block">
+                        <span [innerHtml]="alerts[item.name].title"></span>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="percent">
+                    <div class="up_percent">{{item.end}}</div>
+                    <hr>
+                    <div class="down_percent">{{item.start}}</div>
+                </div>
+            </td>
+            <td>
+                <span class="unit">{{item.unit}}</span>
+            </td>
+            <td>
+                <div class="signs">
+                    <img [src]="item.end>item.start?'../assets/store_visit/arrow_white_up.svg':'../assets/store_visit/arrow_white_down.svg'">
+                    <img *ngIf="item.alerts" src="../assets/store_visit/caution-sign.svg">
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <ion-button expand="block active" [routerLink]="['/sdk/store-alert/report/',params.store_id]"
+                [queryParams]="{channel:params.channel,name:params.name}">{{'alert_main.report'|translate}}
+
+    </ion-button>
+    <ion-button expand="block ok" routerLink="/sdk/tabs/home">{{'alert_main.home'|translate}}</ion-button>
+
+</ion-content>

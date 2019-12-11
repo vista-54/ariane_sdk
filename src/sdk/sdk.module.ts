@@ -1,46 +1,35 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {BrowserModule} from '@angular/platform-browser';
+import {RouteReuseStrategy} from '@angular/router';
+
+import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
+import {SplashScreen} from '@ionic-native/splash-screen/ngx';
+import {StatusBar} from '@ionic-native/status-bar/ngx';
+
 import {SdkComponent} from './sdk.component';
-import {HomeSdkComponent} from './home-sdk/home-sdk.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
-import {IonicModule} from '@ionic/angular';
-import {SdkRouting} from './sdk.routing';
-import {TutorialSdkComponent} from './tutorial/tutorial-sdk.component';
-import {SdkService} from './shared/sdk.service';
-
-import {ChartSemiCircleComponent} from './shared/components/chart-semi-circle/chart-semi-circle.component';
-import {ChangeProgressComponent} from './shared/components/change-progress/change-progress.component';
-import {MenuBottomItemComponent} from './shared/components/menu-bottom-item/menu-bottom-item.component';
-import {DataPreparationComponent} from './shared/components/data-preparation/data-preparation.component';
-import {AboutModalComponent} from './shared/components/about-modal/about-modal.component';
-import {ModalResizeDirective} from './shared/components/modal-resize.directive';
-import {ActiveTabDirective} from './shared/components/active-tab.directive';
-import {RequestService} from './shared/request.service';
-import {HttpClientModule} from '@angular/common/http';
-
+import {SdkRoutingModule} from './sdk-routing.module';
+import {SharedModule} from './shared/shared.module';
+import {ComponentsModule} from './shared/components/components.module';
+import {InAppBrowser} from '@ionic-native/in-app-browser/ngx';
+import {WebView} from '@ionic-native/ionic-webview/ngx';
+import {TranslateModule} from '@ngx-translate/core';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
-    declarations: [SdkComponent, HomeSdkComponent, TutorialSdkComponent, ModalResizeDirective, ActiveTabDirective, AboutModalComponent,
-        DataPreparationComponent, MenuBottomItemComponent,
-        ChartSemiCircleComponent, ChangeProgressComponent],
-    imports: [
-        CommonModule,
-        SdkRouting,
-        FormsModule,
-        IonicModule,
-        RouterModule,
-        ReactiveFormsModule,
-        HttpClientModule
-    ],
-    entryComponents: [
-        AboutModalComponent,
-        DataPreparationComponent
+    declarations: [SdkComponent],
+    entryComponents: [],
+    imports: [IonicModule.forRoot({scrollAssist: true}), SdkRoutingModule, SharedModule, ComponentsModule,
+        TranslateModule.forRoot(),
     ],
     providers: [
-        SdkService,
-        RequestService
-    ]
+        StatusBar,
+        SplashScreen,
+        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+        InAppBrowser,
+        WebView,
+        Geolocation
+    ],
+    bootstrap: [SdkComponent]
 })
 export class SdkModule {
 }

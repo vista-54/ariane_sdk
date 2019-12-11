@@ -1,0 +1,255 @@
+{
+  "welcome": {
+    "title": "collaboration platform",
+    "subtitle1": "Welcome to",
+    "subtitle2": "HPT Ariane Mobile App",
+    "description": "You are few steps away from business insights to grow your sales and business performances.",
+    "start": "Let’s Start"
+  },
+  "info": {
+    "title": "info",
+    "supplierId": "Supplier ID",
+    "email": "Email",
+    "note1": "Please enter your supplier ID and email address to verify your subscription.",
+    "note2": "The security token will be sent to the administrator of your company.",
+    "note3": "If you did not receive the email, please contact",
+    "note4": "The security token will expire in 24 hours.",
+    "next": "Next"
+  },
+  "m_unregister": {
+    "header": " CAUTION!",
+    "p1": "This supplier has not been registered in the HPT Ariane system.",
+    "p2": "Please register.",
+    "ok": "OK"
+  },
+  "m_mismatch": {
+    "p1": "The supplier and email address do not match",
+    "p2": "Please try again.",
+    "p3": "Please register."
+  },
+  "m_thirty_inactive": {
+    "p1": "Your last activity happened longer than the specified activity period allowed.",
+    "p2": "Please reactivate your account."
+  },
+  "m_no_mobile": {
+    "p1": "Your subscription is for the web access only!  If you would like to use the mobile application, please upgrade your subscription.",
+    "p2": "Please contact our customer care team at",
+    "p3": "to upgrade your subscription.",
+    "p4": "Thank you very much for using our app and our service."
+  },
+  "m_failed_retrive": {
+    "p1": "Failed to retrieve your information! The system is busy at the moment.",
+    "p2": "Please try again in 10 minutes.",
+    "p3": "Sorry for inconvenient!"
+  },
+  "m_sub_exp": {
+    "p1": "Your subscription expired!",
+    "p2": "Please contact our customer care team at",
+    "p3": "to renew your subscription.",
+    "p4": "Thank you very much for using our app and our service."
+  },
+  "more": {
+    "title": "more info",
+    "company": "Company Name",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "position": "Position",
+    "subscription": "Subscription",
+    "email": "Email Address",
+    "phone": "Mobile Phone",
+    "code": "Security Code",
+    "request": "Request a Security Token"
+  },
+  "m_token_sent": {
+    "header": "The security token is sent!",
+    "p1": "Your request has been received!",
+    "p2": "The security token is sent to your registered email. If you do not receive the email, please check with your administrator.",
+    "p3": "The security token will expire in 24 hours.",
+    "button": "Ok"
+  },
+  "m_token_invalid": {
+    "header": "CAUTION!",
+    "p1": "Invalid security token.",
+    "p2": "Please try again.",
+    "button": "OK"
+  },
+  "m_invalid_mlt": {
+    "header": "CAUTION!",
+    "p1": "You have tried entering the invalid security token more than the specified number of times allowed.We have to suspend your trying due to the security reason.",
+    "p2": "Please contact our customer care team at",
+    "p3": "to renew your subscription.",
+    "p4": "Thank you very much for using our app and our service.",
+    "button": "OK"
+  },
+  "options": {
+    "title": "options",
+    "q1": "Do you want to activate",
+    "q12": "Geo-localisation?",
+    "q2": "Do you want to store alerts",
+    "q22": "to be mailed to you?",
+    "q3": "Do you want to be informed",
+    "q32": "when new data are uploaded?",
+    "button": "Next"
+  },
+  "prepare": {
+    "p1": "Please wait a moment",
+    "p2": "while we are building your insights!"
+  },
+  "well": {
+    "title": "Well Done!",
+    "button": "Go To Homepage"
+  },
+  "home": {
+    "welcome": "Welcome,",
+    "Market": "MARKET",
+    "Share": "SHARE",
+    "Sales": "SALES",
+    "Value": "VALUE",
+    "Service": "SERVICE",
+    "Level": "LEVEL",
+    "Stock": "STOCK",
+    "Days": "DAYS",
+    "Number": "NUMBER",
+    "of Baskets": "OF BASKET",
+    "Promotion": "PROMOTION",
+    "Intensity": "INTENSITY",
+    "datascope": "Data Scope",
+    "change": "Change"
+  },
+  "tabs": {
+    "store": "Store Visit",
+    "todo": "To Do",
+    "settings": "Settings",
+    "tutorial": "Tutorial"
+  },
+  "datascope": {
+    "title": "data scope selection",
+    "retailer": "RETAILER",
+    "channel": "CHANNEL",
+    "store": "STORE",
+    "category": "CATEGORY",
+    "subcategory": "SUB CATEGORY",
+    "brand": "BRAND",
+    "product": "PRODUCT",
+    "apply": "Apply Change"
+  },
+  "common": {
+    "back": "Back",
+    "home": "Home",
+    "title1": "HPT Ariane",
+    "title2": "Collaboration Platform",
+    "select": "Select",
+    "select_all": "Select All",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "store_name": "Store name",
+    "channel": "Channel",
+    "warning": "warning",
+    "yes": "yes",
+    "no": "no",
+    "date":"date",
+    "time":"time"
+  },
+  "tutorial": {
+    "title": "tutorial"
+  },
+  "settings": {
+    "title": "SETTINGS",
+    "subtitle": "General Info",
+    "team": "Your Team",
+    "renewal": "Renewal Date",
+    "access": "Access",
+    "geo": "Store Geo-localisation",
+    "store_alerts": "Store Alerts",
+    "upload_alert": "Data Upload Alert",
+    "lang": "Language",
+    "save": "Save Settings"
+  },
+  "m_your_team": {
+    "title": "Information",
+    "p1": "Please visit"
+  },
+  "reg": {
+    "title": "REGISTRATION",
+    "submit": "Submit"
+  },
+  "m_reg_success": {
+    "title": "REGISTRATION SUCCESS!",
+    "p1": "Your registration request has been received! Our marketing team will contact your shortly.",
+    "p2": "Thank you very much for using our app and our service."
+  },
+  "m_react_success": {
+    "title": "REACTIVATION SUCCESS!",
+    "p1": "Your account has been reactivated."
+  },
+  "store_visit": {
+    "title": "start a store visit",
+    "channel": "Channel",
+    "store": "Store",
+    "confirm": "Confirm"
+  },
+  "alert_main": {
+    "title": "Store Alerts",
+    "report": "store visit report",
+    "home": "go to homepage"
+  },
+  "alert_detail": {
+    "title": "store alert on",
+    "code": "code",
+    "description": "description",
+    "SHARE": "potential sales",
+    "SALES": "sales difference",
+    "SERVICE": "potential sales",
+    "STOCK": "stock value",
+    "BASKET": "sales loss",
+    "PROMO": "intensity"
+  },
+  "create_todo": {
+    "title": "to do list on",
+    "visit_date": "visit date",
+    "store_id": "store id",
+    "todo": "to do",
+    "due": "due date",
+    "save": "save",
+    "completed": "task completed Date"
+  },
+  "report":{
+    "comment":"your comment",
+    "send":"send report"
+  },
+  "todo": {
+    "title": "TO-DO STATUS",
+    "on": "TO DO ON",
+    "gen": "Generated from To-Do",
+    "market": "MARKET SHARE",
+    "sales": "SALES",
+    "service": "SERVICE LEVEL",
+    "stock": "STOCK DAYS",
+    "number": "NUMBER OF BASKET",
+    "promo": "PROMOTION INTENSITY"
+  },
+  "todo_list": {
+    "title": "to do list on",
+    "pending": "Pending Tasks",
+    "completed": "Completed Tasks",
+    "store": "store name",
+    "mark": "mark as complete",
+    "rm": "delete to-do"
+  },
+  "todo_detail": {
+    "complete": "complete",
+    "rm": "delete to-do",
+    "ok": "ok"
+  },
+  "sdk": {
+    "exit": "Exit",
+    "about": "About App"
+  },
+  "m_todonotsaved": {
+    "p1": "The To-Do is not saved!  Do you want to go back to the previous page without saving the To-Do?"
+  },
+  "m_about":{
+    "header":"",
+    "p1":"To access more data and discover valuable insights, kindly download the HPT Ariane Mobile App from the"
+  }
+}

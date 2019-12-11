@@ -1,7 +1,7 @@
 <div class="change">
-    Change: {{growth?growth+'%':'N/A'}}
+    {{'home.change'|translate}}: {{growth?growth+'%':'N/A'}}
 </div>
 <div class="progress_bar">
     <ion-progress-bar [ngClass]="getClassForBar(growth)" [value]="getValue(growth)"></ion-progress-bar>
-    <img [ngClass]="getClassForArrow(growth)" class="arr" src="assets/sdk/arrow_static.svg">
+    <img [ngClass]="getClassForArrow(growth)" class="arr" src="../assets/icon/arrow_static.svg">
 </div>

@@ -1,0 +1,67 @@
+ion-app{
+  padding-bottom: env(safe-area-inset-bottom)!important;
+  padding-top: env(safe-area-inset-top)!important;
+}
+$bluebackground: #1a82f2;
+ion-content {
+  background-color: $bluebackground;
+  --background: #1a82f2;
+  height: 100%;
+  .title {
+    margin-top: 146px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    margin-top: 70px;
+    margin-bottom: 0;
+    font-size: 50px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .description {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 32px;
+    padding: 0 55px;
+  }
+
+  p {
+    color: white;
+    text-align: center;
+  }
+  ion-button {
+    --background: white;
+    --color: #1a82f2;
+    --border-radius: 13px;
+    width: 299px;
+    margin: 40px auto;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.29;
+    letter-spacing: normal;
+    text-align: center;
+    color: #1a82f2;
+  }
+}
+
+ion-content.md {
+  .title {
+    margin-top: 146px;
+
+  }
+}

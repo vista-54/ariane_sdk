@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="126" viewBox="0 0 180 126">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#ACC754" d="M0 0h180v126H0z"/>
+        <g fill="#FFF">
+            <path fill-rule="nonzero" d="M112.222 25H67.778v5.625h44.444V25zM115 53.125V47.5l-2.778-14.063H67.778L65 47.5v5.625h2.778V70h27.778V53.125h11.11V70h5.556V53.125H115zm-25 11.25H73.333v-11.25H90v11.25z"/>
+            <text font-family="CenturyGothic, Century Gothic" font-size="17" transform="translate(65 25)">
+                <tspan x="0" y="72">STORE</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

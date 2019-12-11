@@ -1,0 +1,29 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 16px;
+  .text_block {
+    display: flex;
+    flex-direction: column;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #ffffff;
+    span:first-child {
+      font-size: 15px;
+      letter-spacing: 0.18px;
+
+    }
+    span:last-child {
+      font-size: 24px;
+      letter-spacing: 0.29px;
+
+    }
+  }
+  img {
+    height: 50px;
+  }
+}

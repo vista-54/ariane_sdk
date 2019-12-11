@@ -1,0 +1,27 @@
+
+ion-header.md {
+  padding-top: 10px;
+  padding-bottom: 14px;
+}
+
+ion-content {
+  --padding-start: 0px;
+  --padding-end: 0px;
+  .title {
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 20px;
+    padding-left: 16px;
+  }
+  iframe {
+    width: 100%;
+    height: calc(100% - 46px);
+  }
+}

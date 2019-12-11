@@ -11,9 +11,9 @@ export class ChartSemiCircleComponent implements OnInit {
     @Input('unit') unit: string;
 
     images = {
-        gray: 'assets/sdk/arrow.svg',
-        green: 'assets/sdk/arrow_green.svg',
-        red: 'assets/sdk/arrow_red.svg',
+        gray: '../assets/icon/arrow.svg',
+        green: '../assets/icon/arrow_green.svg',
+        red: '../assets/icon/arrow_red.svg',
     };
 
     constructor() {

@@ -1,0 +1,30 @@
+<div class="modalSelect">
+    <ion-header>
+        <ion-toolbar>
+            <div>
+                <span class="title">{{'common.select'|translate}} {{prop.type}}</span>
+                <div class="actions">
+                    <a (click)="selectAll()">{{'common.select_all'|translate}}</a>
+                    <a (click)="dismiss()">{{'common.cancel'|translate}}</a>
+                </div>
+            </div>
+        </ion-toolbar>
+        <ion-toolbar>
+            <ion-searchbar name="query" [(ngModel)]="query" showCancelButton="focus" (ionChange)="search(query)"
+                           (ionCancel)="cancel()"></ion-searchbar>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-item lines="none" *ngFor="let entry of list">
+                <ion-label>{{entry.name}}</ion-label>
+                <ion-checkbox slot="start" (click)="select(entry)" name="checkbox"
+                              [(ngModel)]="entry.select"></ion-checkbox>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+</div>
+<ion-footer>
+    <ion-button expand="block" (click)="save()">{{'common.ok'|translate}}</ion-button>
+</ion-footer>

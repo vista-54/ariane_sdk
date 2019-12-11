@@ -1,0 +1,21 @@
+<app-header></app-header>
+<ion-content>
+    <p class="title">
+        <span class="customer">{{'home.welcome'|translate}} {{header.firstname}} {{header.lastname}}</span>
+        <span class="company">{{header.company}}</span>
+    </p>
+    <div class="column">
+        <div class="widget" *ngFor="let widget of widgets" [ngClass]="widget.end?'':'blur'">
+            <div class="header">
+                <span><img [src]="widgetsParams[widget.name].icon"></span>
+                <span>{{'home.'+widgetsParams[widget.name].title1|translate}}<br>{{'home.'+widgetsParams[widget.name].title2|translate}} </span>
+                <span></span>
+            </div>
+            <div *ngIf="!widgetsParams[widget.name].circle" class="value">{{widget.end}} {{widget.unit}}</div>
+            <app-chart-semi-circle *ngIf="widgetsParams[widget.name].circle" [growth]="widget.end"
+                                   [unit]="widget.unit"></app-chart-semi-circle>
+            <app-change-progress [growth]="widget.growth"></app-change-progress>
+        </div>
+    </div>
+    <ion-button expand="block" (click)="dataScope()">{{'home.datascope'|translate}}</ion-button>
+</ion-content>

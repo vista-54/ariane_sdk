@@ -1,0 +1,27 @@
+export const RESPONSE_CODE_LOGIN = {
+    SUCCESS: '0',
+    UNREGISTERED_SUPPLIER: '1',
+    CREDENTIALS_MISMATCH: '2',
+    MISSED_REQUIRED_INFO: '3',
+    THIRTY_DAYS_INACTIVE: '4',
+    NO_MOBILE_ACCESS: '5',
+    FAILED_RETRIEVE_INFO: '6',
+    SUBSCRIPTION_EXPIRED: '7',
+};
+
+
+export const RESPONSE_CODE_REQUEST_TOKEN = {
+    SUCCESS: '0',
+};
+export const RESPONSE_CODE_VERIFY_TOKEN = {
+    SUCCESS: '0',
+    TOKEN_EXPIRED: '1'
+};
+export const RESPONSE_CODE_SETTINGS_UPDATE = {
+    SUCCESS: '0',
+};
+
+export const RESPONSE_CODE = {
+    SUCCESS: '0',
+
+};

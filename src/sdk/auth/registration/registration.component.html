@@ -1,0 +1,41 @@
+<app-header></app-header>
+<ion-content>
+    <div class="wrapper">
+        <div class="info">{{'reg.title'|translate}}</div>
+        <form class="form" [formGroup]="credentials">
+            <ion-item>
+                <ion-label position="stacked">{{'info.supplierId'|translate}}</ion-label>
+                <ion-input [readonly]="this.reactivation" formControlName="supplier_id"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">{{'more.company'|translate}}</ion-label>
+                <ion-input [readonly]="this.reactivation" formControlName="company"></ion-input>
+            </ion-item>
+            <div class="item_rows">
+                <ion-item>
+                    <ion-label position="stacked">{{'more.firstname'|translate}}</ion-label>
+                    <ion-input [readonly]="this.reactivation" formControlName="firstname"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">{{'more.lastname'|translate}}</ion-label>
+                    <ion-input [readonly]="this.reactivation" formControlName="lastname"></ion-input>
+                </ion-item>
+            </div>
+            <ion-item>
+                <ion-label position="stacked">{{'more.position'|translate}}</ion-label>
+                <ion-input [readonly]="this.reactivation" formControlName="position"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">{{'more.email'|translate}}</ion-label>
+                <ion-input [readonly]="this.reactivation" formControlName="email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">{{'more.phone'|translate}}</ion-label>
+                <ion-input [readonly]="this.reactivation" formControlName="phone"></ion-input>
+            </ion-item>
+        </form>
+    </div>
+    <ion-button [disabled]="!credentials.valid" expand="block" (click)="register()">
+        {{'reg.submit'|translate}}
+    </ion-button>
+</ion-content>

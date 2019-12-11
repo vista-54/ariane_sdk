@@ -1,0 +1,16 @@
+<ion-header class="modalHeader">
+    {{'m_reg_success.title'|translate}}
+</ion-header>
+<ion-content slots="fixed">
+    <div class="text" [appModalResize]>
+        <p>{{'m_reg_success.p1'|translate}}</p>
+        <br>
+        <p>
+            {{'m_reg_success.p2'|translate}}</p>
+
+    </div>
+    <ion-button class="okButton" expand="block" (click)="dismiss()">
+        {{'m_unregister.ok'|translate}}
+    </ion-button>
+
+</ion-content>

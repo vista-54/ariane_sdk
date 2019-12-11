@@ -1,0 +1,35 @@
+<app-header></app-header>
+<ion-content>
+    <div class="wrapper">
+        <div class="info">{{'info.title'|translate}}</div>
+        <div class="progress">
+            <div class="progress_item current"><span>1</span><br><span>{{'info.title'|translate}}</span></div>
+            <span class="connect inactive"></span>
+            <div class="progress_item inactive"><span>2</span><br><span>{{'more.title'|translate}}</span></div>
+            <span class="connect inactive"></span>
+            <div class="progress_item inactive"><span>3</span><br><span>{{'options.title'|translate}}</span></div>
+        </div>
+        <form class="form" [formGroup]="credentials" (submit)="next()" (keyup.enter)="next()">
+            <ion-item>
+                <ion-label position="stacked">{{'info.supplierId'|translate}}</ion-label>
+                <ion-input type="tel" formControlName="supplier_id"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="stacked">{{'info.email'|translate}}</ion-label>
+                <ion-input #email formControlName="email"></ion-input>
+            </ion-item>
+
+            <div>
+                <p class="note">{{'info.note1'|translate}}</p>
+                <p class="note"><b>{{'info.note2'|translate}}</b>
+                    {{'info.note3'|translate}}
+                    <a href="mailto:customercare@hptariane.com">customercare@hptariane.com</a>.</p>
+                <p class="note">{{'info.note4'|translate}}</p>
+            </div>
+            <ion-button type="submit" expand="block" [disabled]="!credentials.valid">
+                {{'info.next'|translate}} >>
+            </ion-button>
+        </form>
+    </div>
+
+</ion-content>

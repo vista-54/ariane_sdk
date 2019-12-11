@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title><span>HPT Ariane</span><span>Collaboration Platform</span></ion-title>
+        <ion-buttons slot="end">
+            <!--For android align-->
+            <ion-button style="opacity: 0;height: 0;">
+                Home
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <p class="title">Store Visit Report</p>
+    <app-store-channel [store]="params.name" [channel]="params.channel"></app-store-channel>
+    <div class="header">
+        <div>
+            <ion-label>{{'common.date'|translate}}</ion-label>
+            <ion-label>{{currentDate|date: 'dd/MM/yyyy'}}</ion-label>
+        </div>
+        <div>
+            <ion-label>{{'common.time'|translate}}</ion-label>
+            <ion-label>{{currentDate|date:'HH:mm'}}</ion-label>
+        </div>
+        <div>
+            <ion-label>{{'create_todo.store_id'|translate}}</ion-label>
+            <ion-label>{{storeId}}</ion-label>
+        </div>
+    </div>
+    <div class="wrapper list">
+        <div *ngFor="let market of markets">
+            <ion-label>{{'todo.title'|translate}} {{market.key}}</ion-label>
+            <ion-label>{{'todo.gen'|translate}} ({{market.val}})</ion-label>
+        </div>
+        <div class="detail todo">
+            <div>
+                <ion-label class="label label_with_image"><img src="../assets/todo/create_todo_icon.svg">{{'report.comment'|translate}}:
+                </ion-label>
+                <ion-textarea [(ngModel)]="note"></ion-textarea>
+            </div>
+        </div>
+    </div>
+    <ion-button expand="block active" (click)="send()">{{'report.send'|translate}}</ion-button>
+    <ion-button expand="block ok" routerLink="/sdk/tabs/home">{{'well.button'|translate}}</ion-button>
+</ion-content>

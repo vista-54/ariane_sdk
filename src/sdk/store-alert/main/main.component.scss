@@ -1,0 +1,100 @@
+
+ion-content {
+  --padding-start: 0px;
+  --padding-end: 0px;
+
+  .alert_title {
+    width: 100%;
+    td{
+      padding: 15px 0;
+    }
+    .logo_title {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+    }
+    .text_block {
+      display: flex;
+      flex-direction: column;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-size: 19px;
+      letter-spacing: normal;;
+      padding-left: 10px;
+    }
+    .percent {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .up_percent {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .down_percent {
+        font-size: 14px;
+      }
+      span:first-child {
+        padding-right: 5px;
+      }
+
+    }
+    .unit {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: white;
+    }
+    .signs {
+      img {
+        padding-right: 14px;
+      }
+    }
+  }
+  hr {
+    background-color: white;
+    height: 1px;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.wrapper {
+  padding: 0 16px;
+  .title {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .subtitle {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 12px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2.08;
+    }
+  }
+}
+
+ion-button {
+  margin: 20px 8px;
+  text-transform: capitalize;
+  font-size: 17px;
+}
+
+.active {
+  --background: #79b82a;
+}
+
+.danger {
+  --background: #ff453f;
+}
+
+.ok {
+  --background: #1a82f2;
+}

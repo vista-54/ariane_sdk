@@ -1,44 +1,53 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, ViewChild} from '@angular/core';
 
-import {ModalController, Platform} from '@ionic/angular';
-import {AboutModalComponent} from './shared/components/about-modal/about-modal.component';
+import {Platform} from '@ionic/angular';
+import {SplashScreen} from '@ionic-native/splash-screen/ngx';
+import {StatusBar} from '@ionic-native/status-bar/ngx';
+import {TranslateService} from '@ngx-translate/core';
+import {Geolocation} from '@ionic-native/geolocation/ngx';
 
-export declare const navigator;
+export declare const window: any;
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './sdk.component.html',
-    styleUrls: ['./sdk.component.scss'],
+    selector: 'app-root',
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.scss']
 })
-export class SdkComponent implements OnInit {
-    public isOs = false;
+export class SdkComponent {
+    @ViewChild('content', {static: true}) public content: any;
 
-    constructor(private router: Router, private modalController: ModalController, public platform: Platform) {
+    constructor(private platform: Platform,
+                private splashScreen: SplashScreen,
+                private statusBar: StatusBar,
+                public translate: TranslateService,
+                private geolocation: Geolocation) {
+        this.initializeApp();
 
     }
 
-    ngOnInit() {
-        console.log('init');
-        this.isOs = this.platform.is('ios');
-
-    }
-
-    leave() {
-        navigator['app'].exitApp();
-    }
-
-    about() {
-
-        this.presentModal(AboutModalComponent);
-    }
-
-    private async presentModal(component) {
-        const modal = await this.modalController.create({
-            component,
-            cssClass: 'shareModal',
+    initializeApp() {
+        console.log('inited')
+        this.translate.setDefaultLang('en');
+        this.translate.use('en');
+        this.platform.ready().then(() => {
+            this.saveGeoPosition();
+            this.statusBar.styleLightContent();
+            this.statusBar.overlaysWebView(false);
+            this.statusBar.backgroundColorByName('black');
+            this.splashScreen.hide();
         });
-        return await modal.present();
+    }
+
+    saveGeoPosition() {
+        this.geolocation.getCurrentPosition().then((resp) => {
+            const data = {
+                lat: resp.coords.latitude,
+                lng: resp.coords.longitude
+            };
+            localStorage.setItem('coords', JSON.stringify(data));
+        }).catch((error) => {
+            console.log('Error getting location', error);
+        });
     }
 
 

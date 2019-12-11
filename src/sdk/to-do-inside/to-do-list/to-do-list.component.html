@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="sdk/tabs/to-do"></ion-back-button>
+            <!--<a (click)="openTodo()"><img src="../assets/icon/header_arrow.svg">Back</a>-->
+        </ion-buttons>
+        <ion-title><span>HPT Ariane</span><span>Collaboration Platform</span></ion-title>
+        <ion-buttons slot="end">
+            <!--For android align-->
+            <ion-button style="opacity: 0;height: 0;">
+                Home
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div [ngClass]="params[alertCode].style" class="title">
+    <span class="text_block">
+      <span>{{'todo_list.title'|translate}}</span>
+      <span>{{params[alertCode].title}}</span>
+    </span>
+        <img [src]="params[alertCode].icon">
+    </div>
+    <ion-segment (ionChange)="taskTypeChanged($event)" [value]="defaultType">
+        <ion-segment-button value="0">
+            <ion-label>{{'todo_list.pending'|translate}}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="1">
+            <ion-label>{{'todo_list.completed'|translate}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-list [ngClass]="isVisible?'visibleBox':''">
+        <ion-list-header>
+            <ion-checkbox (ionChange)="selectAll($event)" [(ngModel)]="isSelectedAll"></ion-checkbox>
+            <ion-label [ngClass]="filterField ==='due'?'active':'inactive'" (click)="orderBy('due')"><img
+                    [src]="filterField ==='due'?'../assets/todo/order_arrow_active.svg':'../assets/todo/order_arrow_inactive.svg'"><span>{{'create_todo.due'|translate}}</span>
+            </ion-label>
+            <ion-label [ngClass]="filterField ==='store'?'active':'inactive'" (click)="orderBy('store')"><img
+                    [src]="filterField ==='store'?'../assets/todo/order_arrow_active.svg':'../assets/todo/order_arrow_inactive.svg'">
+                <span>{{'todo_list.store'|translate}}</span>
+            </ion-label>
+            <ion-label class="inactive">{{'alert_detail.'+alertCode|translate}}</ion-label>
+        </ion-list-header>
+        <div class="item" *ngFor="let item of this.taskList">
+            <div class="checkbox_part">
+                <ion-checkbox [(ngModel)]="item.selected" (click)="select(item)"></ion-checkbox>
+            </div>
+            <div class="text_part" [routerLink]="['/sdk/to-do/detail/',alertCode,item.task_id]">
+                <div>
+                    <span class="due_date">{{item.due}}</span>
+                    <span class="store_name">{{item.store}}</span>
+                    <span class="right_value">{{item.value}}</span>
+                </div>
+                <div>
+                    {{item.item_id}} {{item.product}}
+                </div>
+            </div>
+        </div>
+
+
+    </ion-list>
+    <div class="control_box" [ngClass]="isVisible?'visible':''">
+        <ion-button *ngIf="defaultType==='0'" expand="block active" (click)="changeStatus()">
+            {{'todo_list.mark'|translate}}
+        </ion-button>
+        <ion-button expand="block danger" (click)="delete()">{{'todo_list.rm'|translate}}</ion-button>
+        <ion-button expand="block ok" routerDirection="root" routerLink="/sdk/tabs/home">{{'alert_main.home'|translate}}</ion-button>
+
+    </div>
+</ion-content>

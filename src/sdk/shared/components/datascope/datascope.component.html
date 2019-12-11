@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <a (click)="dismiss()"><img src="../assets/icon/header_arrow.svg">{{'common.home'|translate}}</a>
+        </ion-buttons>
+        <ion-title><span>{{'common.title1'|translate}}</span><span>{{'common.title2'|translate}}</span></ion-title>
+        <ion-buttons slot="end">
+            <!--For android align-->
+            <ion-button style="opacity: 0;height: 0;">
+                Home
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <p class="title">{{'datascope.title'|translate}}</p>
+    <div class="row_container">
+        <div class="item retailer" (click)="get('retailer')"><img
+                src="../assets/datascope/icon_retailer.svg"><span>{{'datascope.retailer'|translate}}</span></div>
+        <div class="row">
+            <div class="item channel" (click)="get('channel')">
+                <img src="../assets/datascope/icon_channel.svg"><span>{{'datascope.channel'|translate}}</span>
+            </div>
+            <div class="item store" (click)="get('store')">
+                <img src="../assets/datascope/icon_store.svg"><span>{{'datascope.store'|translate}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item category" (click)="get('category')">
+                <img src="../assets/datascope/icon_category.svg"><span>{{'datascope.category'|translate}}</span>
+            </div>
+            <div class="item subcategory" (click)="get('sub-category')">
+                <img src="../assets/datascope/icon_subcategory.svg"><span>{{'datascope.subcategory'|translate}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item brand" (click)="get('brand')">
+                <img src="../assets/datascope/icon_brand.svg"><span>{{'datascope.brand'|translate}}</span>
+            </div>
+            <div class="item product" (click)="get('product')">
+                <img src="../assets/datascope/icon_product.svg"><span>{{'datascope.product'|translate}}</span>
+            </div>
+        </div>
+    </div>
+    <ion-button expand="block" (click)="apply()">{{'datascope.apply'|translate}}</ion-button>
+</ion-content>

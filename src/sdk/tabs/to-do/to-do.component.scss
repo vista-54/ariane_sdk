@@ -1,0 +1,46 @@
+ion-content {
+  --padding-start: 0px;
+  --padding-end: 0px;
+  .title {
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 10px;
+    padding-left: 16px;
+  }
+
+  .row_container {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 27px 10px;
+    .row {
+      display: flex;
+      flex-direction: column;
+      padding-left: 13px;
+      .todo_title{
+        font-size: 17px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.61px;
+      }
+      .todo_subtitle{
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.43px;
+      }
+    }
+  }
+}
+

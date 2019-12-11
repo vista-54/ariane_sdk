@@ -1,0 +1,20 @@
+<ion-footer>
+    <app-menu-bottom-item [title]="'tabs.store'|translate" route="/sdk/tabs/store-visit"
+                          activeIcon="../assets/bottom_menu/icon_store_visit_active.svg"
+                          inactiveIcon="../assets/icon/menu_store_visit.svg">
+    </app-menu-bottom-item>
+    <app-menu-bottom-item [title]="'tabs.todo'|translate" route="/sdk/tabs/to-do"
+                          activeIcon="../assets/bottom_menu/icon_to_do_active.svg"
+                          inactiveIcon="../assets/icon/menu_todo.svg"
+                          [badge]="todo">
+    </app-menu-bottom-item>
+    <app-menu-bottom-item [title]="'tabs.settings'|translate" route="/sdk/tabs/settings"
+                          activeIcon="../assets/bottom_menu/icon_settings_active.svg"
+                          inactiveIcon="../assets/icon/settings.svg">
+    </app-menu-bottom-item>
+
+    <app-menu-bottom-item [title]="'tabs.tutorial'|translate" route="/sdk/tabs/tutorial"
+                          activeIcon="../assets/bottom_menu/icon_tutorial_active.svg"
+                          inactiveIcon="../assets/icon/tutorial.svg">
+    </app-menu-bottom-item>
+</ion-footer>

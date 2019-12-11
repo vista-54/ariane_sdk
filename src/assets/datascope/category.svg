@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="126" viewBox="0 0 180 126">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#EE8A06" d="M0 0h180v126H0z"/>
+        <g fill="#FFF">
+            <path fill-rule="nonzero" d="M88.579 20l15.632 25.2H72.947L88.58 20zm15.632 56c-7.064 0-12.79-5.641-12.79-12.6s5.726-12.6 12.79-12.6c7.063 0 12.789 5.641 12.789 12.6S111.274 76 104.21 76zM63 52.2h22.737v22.4H63V52.2z"/>
+            <text font-family="CenturyGothic, Century Gothic" font-size="17" transform="translate(44 20)">
+                <tspan x="0" y="82">CATEGORY</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

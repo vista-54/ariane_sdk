@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="126" viewBox="0 0 180 126">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#E45A35" d="M0 0h180v126H0z"/>
+        <g fill="#FFF">
+            <path fill-rule="nonzero" d="M90 27L64 68.854h52z"/>
+            <text font-family="CenturyGothic, Century Gothic" font-size="17" transform="translate(27 27)">
+                <tspan x="0" y="75">SUB CATEGORY</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

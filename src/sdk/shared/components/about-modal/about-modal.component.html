@@ -1,13 +1,11 @@
 <ion-header class="modalHeader">
-  Want to Know More?
+  {{'m_about.header'|translate}}
 </ion-header>
 <ion-content slots="fixed" [appModalResize]>
   <div class="text">
-    <p>To access more data and discover valuable insights, kindly download the HPT Ariane Mobile App from the <a target="_system"
-                                                                                                                 *ngIf="isOs" [href]="linkIos">App Store</a>
-      <a target="_system" *ngIf="isAndroid" [href]="linkAndroid">Google Play Market</a></p>
+    <p>To access more data and discover valuable insights, kindly download the HPT Ariane Mobile App from the</p>
     <br>
   </div>
-  <ion-button class="okButton" expand="block" (click)="dismiss()">OK</ion-button>
+  <ion-button class="okButton" expand="block" (click)="dismiss()">{{'m_token_invalid.button'|translate}}</ion-button>
 
 </ion-content>

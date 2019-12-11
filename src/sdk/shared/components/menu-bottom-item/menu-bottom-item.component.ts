@@ -9,6 +9,7 @@ export class MenuBottomItemComponent implements OnInit {
 
     @Input('title') title: string;
     @Input('route') route: string;
+    @Input('badge') badge: string;
     @Input('activeIcon') activeIcon: string;
     @Input('inactiveIcon') inactiveIcon: string;
 

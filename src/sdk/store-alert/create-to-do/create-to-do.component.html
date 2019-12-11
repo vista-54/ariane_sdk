@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <a (click)="goBack()"><img src="../assets/icon/header_arrow.svg">Home</a>
+
+            <!--<ion-back-button></ion-back-button>-->
+        </ion-buttons>
+        <ion-title><span>HPT Ariane</span><span>Collaboration Platform</span></ion-title>
+        <ion-buttons slot="end">
+            <!--For android align-->
+            <ion-button style="opacity: 0;height: 0;">
+                Home
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <app-alert-title [class]="params[state.alertCode].style" [label]="'create_todo.title'|translate"
+                     [title]="params[state.alertCode].title" [icon]="params[state.alertCode].icon"></app-alert-title>
+    <app-store-channel [store]="state.store"
+                       [channel]="state.channel"></app-store-channel>
+
+    <hr>
+    <div class="wrapper">
+        <div class="detail">
+            <div class="col">
+                <ion-label class="label">{{'create_todo.visit_date'|translate}}</ion-label>
+                <ion-label class="value">{{date|date:'shortDate'}}</ion-label>
+                <ion-label class="label">{{'alert_detail.code'|translate}}</ion-label>
+                <ion-label class="value">{{state.item.item_id}}</ion-label>
+            </div>
+            <div class="col">
+                <ion-label class="label">{{'create_todo.store_id'|translate}}</ion-label>
+                <ion-label class="value">{{state.store_id}}</ion-label>
+                <ion-label class="label">{{'alert_detail.'+state.alertCode|translate}}</ion-label>
+                <ion-label class="value">{{state.item.value}}</ion-label>
+            </div>
+        </div>
+        <div class="detail">
+            <div class="col">
+                <ion-label class="label">{{'alert_detail.description'|translate}}</ion-label>
+                <ion-label class="value">{{state.item.article}}</ion-label>
+            </div>
+        </div>
+        <div class="detail todo">
+            <ion-label class="label label_with_image"><img src="../assets/todo/create_todo_icon.svg">{{'create_todo.todo'|translate}}:
+            </ion-label>
+            <ion-textarea rows="5" [(ngModel)]="note"></ion-textarea>
+        </div>
+        <div class="detail">
+            <div class="col todo">
+                <ion-label class="label label_with_image"><img src="../assets/todo/due_date_icon.svg">{{'create_todo.due'|translate}}
+                </ion-label>
+                <ion-datetime displayFormat="YYYY-MM-DD" placeholder="Select Date"
+                              [(ngModel)]="selectedDate"></ion-datetime>
+            </div>
+        </div>
+    </div>
+    <ion-button expand="block ok" [disabled]="!selectedDate" (click)="create()">{{'create_todo.save'|translate}}
+    </ion-button>
+
+</ion-content>

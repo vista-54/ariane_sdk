@@ -1,0 +1,31 @@
+<div class="modalSelect">
+    <ion-header>
+        <ion-toolbar>
+            <div>
+                <span class="title">Select {{prop.type}}</span>
+                <div class="actions">
+                    <a (click)="dismiss()">Cancel</a>
+                </div>
+            </div>
+        </ion-toolbar>
+        <ion-toolbar>
+            <ion-searchbar name="query" [(ngModel)]="query" showCancelButton="focus" (ionChange)="search(query)"
+                           (ionCancel)="cancel()"></ion-searchbar>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-radio-group>
+                <ion-item lines="none" *ngFor="let entry of list">
+                    <ion-label>{{entry.name}}</ion-label>
+                    <ion-radio slot="start" (click)="select(entry)" [value]="entry"
+                               [checked]="entry.select"></ion-radio>
+                </ion-item>
+            </ion-radio-group>
+        </ion-list>
+    </ion-content>
+
+</div>
+<ion-footer>
+    <ion-button expand="block" (click)="save()">Ok</ion-button>
+</ion-footer>

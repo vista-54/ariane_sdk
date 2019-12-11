@@ -1,0 +1,15 @@
+<app-header-inside-tabs></app-header-inside-tabs>
+<ion-content>
+    <p class="title">{{'todo.title'|translate}}</p>
+    <div>
+        <div *ngFor="let alert of data" (click)="openToDoList(alert.val.code,alert.val.alerts)"
+             class="row_container" [ngClass]="params[alert.val.code].style">
+            <img [src]="params[alert.val.code].icon">
+            <span class="row">
+                <span class="todo_title">{{'todo.on'|translate}} {{'todo.'+params[alert.val.code].translate|translate}} </span>
+                <span class="todo_subtitle">{{'todo.gen'|translate}} ({{alert.val.alerts}})</span>
+            </span>
+        </div>
+
+    </div>
+</ion-content>

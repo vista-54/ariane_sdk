@@ -1,0 +1,14 @@
+<ion-header class="modalHeader">
+    {{'m_unregister.header'|translate}}
+</ion-header>
+<ion-content>
+    <div class="text" [appModalResize]>
+
+        <p>{{'m_mismatch.p1'|translate}}</p>
+        <br>
+        <p *ngIf="counter<3">{{'m_mismatch.p2'|translate}}</p>
+        <p *ngIf="counter>=3">{{'m_mismatch.p3'|translate}}</p>
+    </div>
+    <ion-button class="okButton" expand="block" (click)="dismiss()"> {{'m_unregister.ok'|translate}}
+    </ion-button>
+</ion-content>
