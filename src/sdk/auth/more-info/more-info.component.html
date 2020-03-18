@@ -10,7 +10,14 @@
             <span class="connect inactive"></span>
             <div class="progress_item inactive"><span>3</span><br><span>{{'options.title'|translate}}</span></div>
         </div>
-        <form class="form" [formGroup]="credentials" (submit)="next()" (keyup.enter)="next()">
+        <div>
+            <p style="margin-bottom: 0!important;" class="note request" (click)="requestToken()">{{'more.request'|translate}}</p>
+        </div>
+        <form class="form" style="margin-top: 0" [formGroup]="credentials">
+            <ion-item>
+                <ion-label style="font-weight: bold;color: blue!important;" position="stacked"> {{'more.code'|translate}}</ion-label>
+                <ion-input #code type="tel" formControlName="token"></ion-input>
+            </ion-item>
             <ion-item>
                 <ion-label position="stacked">{{'info.supplierId'|translate}}</ion-label>
                 <ion-input readonly formControlName="supplier_id"></ion-input>
@@ -47,18 +54,11 @@
                 <ion-label position="stacked"> {{'more.phone'|translate}}</ion-label>
                 <ion-input readonly formControlName="phone"></ion-input>
             </ion-item>
-            <ion-item>
-                <ion-label position="stacked"> {{'more.code'|translate}}</ion-label>
-                <ion-input #code type="tel" formControlName="token"></ion-input>
-            </ion-item>
-            <div>
-                <p class="note request" (click)="requestToken()">{{'more.request'|translate}}</p>
-            </div>
-            <ion-button [disabled]="!credentials.valid" expand="block" type="submit">
-                {{'info.next'|translate}} >>
-            </ion-button>
+
         </form>
 
     </div>
-
+    <ion-button [disabled]="!credentials.valid" expand="block" type="submit" (click)="next()">
+        {{'more.next'|translate}} >>
+    </ion-button>
 </ion-content>

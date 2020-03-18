@@ -2,7 +2,9 @@ import {ModalController} from '@ionic/angular';
 import {CanDeactivate} from '@angular/router';
 import {CreateToDoComponent} from '../../create-to-do/create-to-do.component';
 import {ToDoNotSavedComponent} from '../../../shared/components/to-do-not-saved/to-do-not-saved.component';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class IsToDoSaved implements CanDeactivate<CreateToDoComponent> {
 
     public modal: HTMLIonModalElement;

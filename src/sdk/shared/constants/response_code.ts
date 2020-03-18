@@ -15,7 +15,8 @@ export const RESPONSE_CODE_REQUEST_TOKEN = {
 };
 export const RESPONSE_CODE_VERIFY_TOKEN = {
     SUCCESS: '0',
-    TOKEN_EXPIRED: '1'
+    TOKEN_INCORRECT: '1',
+    TOKEN_EXPIRED: '2',
 };
 export const RESPONSE_CODE_SETTINGS_UPDATE = {
     SUCCESS: '0',

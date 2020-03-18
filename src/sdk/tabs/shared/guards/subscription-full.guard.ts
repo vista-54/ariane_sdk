@@ -4,7 +4,9 @@ import {UserModel} from '../../../shared/models/user.model';
 import {ModalController} from '@ionic/angular';
 import {ModalOptions} from '@ionic/core';
 import {AccessDaniedComponent} from '../../../shared/components/access-danied/access-danied.component';
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class SubscriptionFullGuard implements CanActivate {
 
     constructor(public modalController: ModalController) {

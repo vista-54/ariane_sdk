@@ -9,7 +9,7 @@
             <span class="connect inactive"></span>
             <div class="progress_item inactive"><span>3</span><br><span>{{'options.title'|translate}}</span></div>
         </div>
-        <form class="form" [formGroup]="credentials" (submit)="next()" (keyup.enter)="next()">
+        <form class="form" [formGroup]="credentials">
             <ion-item>
                 <ion-label position="stacked">{{'info.supplierId'|translate}}</ion-label>
                 <ion-input type="tel" formControlName="supplier_id"></ion-input>
@@ -18,18 +18,17 @@
                 <ion-label position="stacked">{{'info.email'|translate}}</ion-label>
                 <ion-input #email formControlName="email"></ion-input>
             </ion-item>
-
-            <div>
-                <p class="note">{{'info.note1'|translate}}</p>
-                <p class="note"><b>{{'info.note2'|translate}}</b>
-                    {{'info.note3'|translate}}
-                    <a href="mailto:customercare@hptariane.com">customercare@hptariane.com</a>.</p>
-                <p class="note">{{'info.note4'|translate}}</p>
-            </div>
-            <ion-button type="submit" expand="block" [disabled]="!credentials.valid">
+        </form>
+        <div>
+            <p class="note">{{'info.note1'|translate}}</p>
+            <ion-button expand="block" [disabled]="!credentials.valid" (click)="next()">
                 {{'info.next'|translate}} >>
             </ion-button>
-        </form>
+            <p class="note"><b>{{'info.note2'|translate}}</b>
+                {{'info.note3'|translate}}
+                <a href="mailto:customercare@hptariane.com">customercare@hptariane.com</a>.</p>
+            <p class="note">{{'info.note4'|translate}}</p>
+        </div>
     </div>
 
 </ion-content>

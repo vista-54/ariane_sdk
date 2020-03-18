@@ -1,12 +1,13 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from '../shared/services/auth.service';
-import {Router} from '@angular/router';
-import {RESPONSE_CODE_VERIFY_TOKEN} from '../../shared/constants/response_code';
-import {VerifyTokenResponse} from '../../shared/interfaces/response';
-import {Events, IonInput} from '@ionic/angular';
-import {VerifyTokenModel} from '../shared/models/verifyToken.model';
-import {RequestTokenModel} from '../shared/models/requestToken.model';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../shared/services/auth.service';
+import { Router } from '@angular/router';
+import { RESPONSE_CODE_VERIFY_TOKEN } from '../../shared/constants/response_code';
+import { VerifyTokenResponse } from '../../shared/interfaces/response';
+import { IonInput } from '@ionic/angular';
+import { VerifyTokenModel } from '../shared/models/verifyToken.model';
+import { RequestTokenModel } from '../shared/models/requestToken.model';
+import { CommonService } from '../../shared/services/common.service';
 
 @Component({
     selector: 'app-more-info',
@@ -16,12 +17,12 @@ import {RequestTokenModel} from '../shared/models/requestToken.model';
 export class MoreInfoComponent implements OnInit {
     credentials: FormGroup;
     user: any;
-    @ViewChild('code', {static: false}) inputElement: IonInput;
+    @ViewChild('code', { static: false }) inputElement: IonInput;
 
     constructor(private auth: AuthService,
-                private formBuilder: FormBuilder,
-                public router: Router,
-                public events: Events) {
+        private formBuilder: FormBuilder,
+        public router: Router,
+        public commonService: CommonService) {
         this.user = JSON.parse(localStorage.user);
         const latestToken = localStorage.getItem('latestToken');
         this.credentials = this.formBuilder.group({
@@ -36,11 +37,14 @@ export class MoreInfoComponent implements OnInit {
             token: ['', [Validators.required]],
         });
         if (latestToken) {
-            this.credentials.patchValue({token: latestToken});
+            this.credentials.patchValue({ token: latestToken });
         }
-        events.subscribe('token:error', () => {
-            this.inputElement.setFocus();
-        });
+        this.commonService.getWrongTokenEvent().subscribe(data => {
+            if (data.event === 'token:error') {
+                this.inputElement.setFocus();
+            }
+        })
+
     }
 
     ngOnInit() {
@@ -62,7 +66,7 @@ export class MoreInfoComponent implements OnInit {
     }
 
     requestToken() {
-        const data: RequestTokenModel = {user_id: this.user.userid};
+        const data: RequestTokenModel = { user_id: this.user.userid };
         this.auth.requestToken(data)
             .subscribe(success => {
                 console.log(success);

@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {WidgetModel} from '../shared/widget.model';
-import {HomeHeaderModel} from '../shared/homeHeader.model';
+import { WidgetModel } from '../tabs/shared/models/widget.model';
+import { HomeHeaderModel } from '../tabs/shared/models/homeHeader.model';
+
 
 export declare const navigator;
 

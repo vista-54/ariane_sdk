@@ -1,6 +1,7 @@
-import {Component, Input} from '@angular/core';
-import {Router} from '@angular/router';
-import {Events, ModalController} from '@ionic/angular';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { CommonService } from '../../services/common.service';
 
 @Component({
     selector: 'app-caution-invalid-token',
@@ -12,7 +13,7 @@ export class CautionInvalidTokenComponent {
     @Input('counter') private counter: number;
 
     constructor(private modalCtrl: ModalController, public router: Router,
-                public events: Events) {
+        public commonService: CommonService) {
     }
 
 
@@ -21,7 +22,7 @@ export class CautionInvalidTokenComponent {
             dismissed: true
         });
         setTimeout(() => {
-            this.events.publish('token:error', {});
+            this.commonService.sendWrongTokenEvent({ event: 'token:error' });
         }, 500);
 
         if (this.counter >= 3) {

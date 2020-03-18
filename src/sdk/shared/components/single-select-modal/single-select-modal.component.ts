@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Events, ModalController} from '@ionic/angular';
+import {ModalController} from '@ionic/angular';
 import {StoreVisitService} from '../../../tabs/shared/services/store-visit.service';
 
 @Component({
@@ -24,7 +24,7 @@ export class SingleSelectModalComponent implements OnInit {
     isSelectAll = false;
     user: any;
 
-    constructor(private modalCtrl: ModalController, public events: Events, private storeVisitService: StoreVisitService) {
+    constructor(private modalCtrl: ModalController,  private storeVisitService: StoreVisitService) {
         this.user = JSON.parse(localStorage.user);
 
     }

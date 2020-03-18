@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ModalController} from '@ionic/angular';
 import {CommonModalComponent} from '../commonModalComponent';
+import {Router} from '@angular/router';
 
 declare const navigator;
 
@@ -11,13 +12,19 @@ declare const navigator;
 })
 export class CautionModalExpiredComponent extends CommonModalComponent {
 
-    constructor(modalCtrl: ModalController) {
+    constructor(public modalCtrl: ModalController, private router: Router) {
         super(modalCtrl);
     }
 
-    dismiss() {
-        navigator['app'].exitApp();
+    token() {
+        this.router.navigate(['auth/more-info']);
+        setTimeout(() => {
+            this.dismiss();
+        }, 500);
     }
 
+    renew() {
+        window.location.href = 'https://www.myanmar-retail-platform.com/app/app-quote';
+    }
 
 }

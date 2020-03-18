@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Events, ModalController} from '@ionic/angular';
+import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { CommonService } from '../../services/common.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class SelectModalComponent implements OnInit {
     isSelectAll = false;
 
 
-    constructor(private modalCtrl: ModalController, public events: Events) {
+    constructor(private modalCtrl: ModalController, public commonService: CommonService) {
     }
 
 
@@ -66,7 +67,11 @@ export class SelectModalComponent implements OnInit {
     }
 
     save() {
-        this.events.publish('datascope:save', this.prop.type, this.selectedArr);
+        this.commonService.sendWrongTokenEvent({
+            event: 'datascope:save',
+            type: this.prop.type,
+            data: this.selectedArr
+        })
         localStorage[this.prop.type] = JSON.stringify(this.selectedArr);
         this.dismiss();
     }

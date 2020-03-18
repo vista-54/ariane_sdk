@@ -24,6 +24,8 @@ import {RESPONSE_CODE} from '../../../shared/constants/response';
 import {RequestTokenModel} from '../models/requestToken.model';
 import {CommonService} from '../../../shared/services/common.service';
 import {SettingsModel} from '../../../shared/models/settings.model';
+import {ModalSecondWrongCredentialsComponent} from '../../../shared/components/modal-second-wrong-credentials/modal-second-wrong-credentials.component';
+import {ModalTokenExpiredComponent} from '../../../shared/components/modal-token-expired/modal-token-expired.component';
 
 
 @Injectable()
@@ -69,7 +71,11 @@ export class AuthService implements Resolve<any> {
                         break;
                     case RESPONSE_CODE_LOGIN.CREDENTIALS_MISMATCH:
                         this.errorCounterLogin++;
-                        this.commonService.presentModal(CautionModalMismatchComponent, {counter: this.errorCounterLogin});
+                        if (this.errorCounterLogin > 1) {
+                            this.commonService.presentModal(ModalSecondWrongCredentialsComponent);
+                        } else {
+                            this.commonService.presentModal(CautionModalMismatchComponent);
+                        }
                         break;
                     case RESPONSE_CODE_LOGIN.MISSED_REQUIRED_INFO:
                         this.commonService.presentModal(CautionModalMissedComponent);
@@ -110,17 +116,21 @@ export class AuthService implements Resolve<any> {
     verifyToken(data: VerifyTokenModel) {
         return this.request.post(APP_URL.auth.verify, data)
             .pipe(tap((res: VerifyTokenResponse) => {
+                debugger
                 switch (res.code) {
                     case RESPONSE_CODE.SUCCESS:
                         localStorage['settings'] = JSON.stringify(res.settings);
                         break;
-                    case RESPONSE_CODE_VERIFY_TOKEN.TOKEN_EXPIRED:
+                    case RESPONSE_CODE_VERIFY_TOKEN.TOKEN_INCORRECT:
                         this.errorCounterToken++;
                         if (this.errorCounterToken === 3) {
                             this.commonService.presentModal(CautionInvalidTokenMultitimeComponent);
                         } else {
                             this.commonService.presentModal(CautionInvalidTokenComponent);
                         }
+                        break;
+                    case RESPONSE_CODE_VERIFY_TOKEN.TOKEN_EXPIRED:
+                        this.commonService.presentModal(ModalTokenExpiredComponent);
                         break;
                     default:
                         this.commonService.presentModal(CautionModalFailedRetrieveInfoComponent);

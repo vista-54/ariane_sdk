@@ -16,7 +16,9 @@ export class CautionInvalidTokenMultitimeComponent extends CommonModalComponent 
 
 
     dismiss() {
-        navigator['app'].exitApp();
+        this.modalCtrl.dismiss({
+            dismissed: true
+        });
     }
 
 }

@@ -1,7 +1,8 @@
-import {Component, Input} from '@angular/core';
-import {Events, ModalController} from '@ionic/angular';
-import {Router} from '@angular/router';
-import {CommonModalComponent} from '../commonModalComponent';
+import { Component, Input } from '@angular/core';
+import {ModalController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { CommonModalComponent } from '../commonModalComponent';
+import { CommonService } from '../../services/common.service';
 
 declare const document;
 
@@ -14,7 +15,7 @@ export class CautionModalMismatchComponent {
 
     @Input('counter') public counter: any;
 
-    constructor(private modalCtrl: ModalController, public router: Router, public events: Events) {
+    constructor(private modalCtrl: ModalController, public router: Router, public commonService: CommonService) {
         console.log(this.counter);
     }
 
@@ -26,8 +27,9 @@ export class CautionModalMismatchComponent {
         /**
          * wait when modal will be closed
          */
+
         setTimeout(() => {
-            this.events.publish('login:error', {});
+            this.commonService.sendWrongTokenEvent({ event: 'login:error' });
         }, 500);
 
         if (this.counter >= 3) {
