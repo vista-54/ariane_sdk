@@ -15,11 +15,10 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            <ion-radio-group>
+            <ion-radio-group [value]=selectedElement>
                 <ion-item lines="none" *ngFor="let entry of list">
                     <ion-label>{{entry.name}}</ion-label>
-                    <!-- <ion-radio slot="start" (click)="select(entry)" [value]="entry"
-                               [checked]="entry.select"></ion-radio> -->
+                    <ion-radio slot="start" (click)="select(entry)" [value]="entry"></ion-radio>
                 </ion-item>
             </ion-radio-group>
         </ion-list>
