@@ -1,13 +1,30 @@
 
 
-@import "app/sdk/auth/auth.component";
-@import "app/sdk/shared/components/modals.common";
+@import "auth/auth.component";
+@import "/shared/components/modals.common";
 
 .paddingbottom {
   padding-bottom: env(safe-area-inset-bottom);
 }
-
+.iframeModal{
+  .modal-wrapper {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    ion-header {
+      padding-top: unset !important;
+      ion-toolbar:first-child {
+        padding-top: unset !important;
+      }
+    }
+  }
+}
 .shareModal {
+  top: 63px !important;
+  background: white;
+  ion-backdrop {
+    background: white;
+  }
   .modal-wrapper {
     width: 95% !important;
     height: 299px;
@@ -23,7 +40,7 @@
 
 .selectModal {
   .modal-wrapper {
-    height: 70%!important;
+    // height: 70%!important;
     position: absolute;
     bottom: 0;
     ion-header {
@@ -51,30 +68,30 @@
 
 @font-face {
   font-family: "CenturyGothic";
-  src: url('assets/fonts/CenturyGothic.ttf') format('truetype'), /* Safari, Android, iOS */
+  src: url("assets/fonts/CenturyGothic.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
 @font-face {
   font-family: "CenturyGothic-Bold";
-  src: url('assets/fonts/CenturyGothic-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+  src: url("assets/fonts/CenturyGothic-Bold.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
 @font-face {
   font-family: "CenturyGothic-Italic";
-  src: url('assets/fonts/CenturyGothic-Italic.ttf') format('truetype'), /* Safari, Android, iOS */
+  src: url("assets/fonts/CenturyGothic-Italic.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
 @font-face {
   font-family: "CenturyGothic-BoldItalic";
-  src: url('assets/fonts/CenturyGothic-BoldItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+  src: url("assets/fonts/CenturyGothic-BoldItalic.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 
 * {
-  font-family: 'CenturyGothic';
+  font-family: "CenturyGothic";
 }
 
 input {
-  font-family: 'CenturyGothic' !important;
+  font-family: "CenturyGothic" !important;
 }
 
 .market_share {
@@ -166,28 +183,35 @@ ion-header {
     }
     span:first-child {
       font-size: 26px;
-      font-family: 'CenturyGothic';
-
+      font-family: "CenturyGothic";
     }
     span:last-child {
       font-size: 10px;
       font-weight: bold;
       text-transform: uppercase;
-      font-family: 'CenturyGothic-Bold';
-
+      font-family: "CenturyGothic-Bold";
     }
   }
-
 }
 
 ion-footer {
   padding-bottom: env(safe-area-inset-bottom) !important;
 }
 scroll-content {
-  padding-bottom:0!important;
+  padding-bottom: 0 !important;
 }
 
-ion-app, ion-nav, ion-tab, ion-tabs, .app-root{
+ion-app,
+ion-nav,
+ion-tab,
+ion-tabs,
+.app-root {
   -webkit-transition: bottom 0.3s;
   transition: bottom 0.3s;
 }
+
+.contact_icon {
+  width: 28px;
+  height: 28px;
+}
+

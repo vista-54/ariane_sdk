@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { SelectModalComponent } from '../select-modal/select-modal.component';
-import { CommonService } from '../../services/common.service';
-import { HomeService } from '../../../tabs/shared/services/home.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ModalController} from '@ionic/angular';
+import {SelectModalComponent} from '../select-modal/select-modal.component';
+import {CommonService} from '../../services/common.service';
+import {HomeService} from '../../../tabs/shared/services/home.service';
 
 declare const Object;
 
@@ -16,6 +16,7 @@ export class DatascopeComponent implements OnInit, OnDestroy {
     user: any;
     public datascope = {};
     private resultArr = {};
+    public didNotHaveDataApply: Boolean;
     private types = {
         retailer: 'value',
         channel: 'name',
@@ -27,8 +28,8 @@ export class DatascopeComponent implements OnInit, OnDestroy {
     };
 
     constructor(public modalCtrl: ModalController,
-        private commonService: CommonService,
-        private home: HomeService) {
+                private commonService: CommonService,
+                private home: HomeService) {
         this.user = JSON.parse(localStorage.user);
 
     }
@@ -50,15 +51,16 @@ export class DatascopeComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.commonService.getWrongTokenEvent().subscribe(data => {
             if (data.event === 'datascope:save') {
+                this.didNotHaveDataApply = true;
                 this.resultArr[data.type] = data.data;
                 console.log(this.resultArr);
             }
-        })
+        });
 
     }
 
     get(type) {
-        this.home.datascope(type, { user_id: this.user.userid }).subscribe(success => {
+        this.home.datascope(type, {user_id: this.user.userid}).subscribe(success => {
             this.datascope[type] = success['result'];
             this.openSelect({
                 type,
@@ -90,15 +92,15 @@ export class DatascopeComponent implements OnInit, OnDestroy {
             user_id: this.user.userid,
             scope: this.resultArr
         }).subscribe(success => {
-            if (success['code'] === '0') {
-                this.loadHome();
+                if (success['code'] === '0') {
+                    this.loadHome();
+                }
             }
-        }
         );
     }
 
     loadHome() {
-        this.home.get({ user_id: this.user.userid })
+        this.home.get({user_id: this.user.userid})
             .subscribe(() => {
                 this.dismiss();
             });

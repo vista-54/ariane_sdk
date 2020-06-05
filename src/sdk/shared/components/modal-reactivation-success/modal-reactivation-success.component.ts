@@ -19,6 +19,6 @@ export class ModalReactivationSuccessComponent implements OnInit {
         this.modalCtrl.dismiss({
             dismissed: true
         });
-        this.router.navigate(['sdk/auth/info1']);
+        this.router.navigate(['auth/info1']);
     }
 }

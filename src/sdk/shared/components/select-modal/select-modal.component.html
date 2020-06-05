@@ -3,23 +3,24 @@
         <ion-toolbar>
             <div>
                 <span class="title">{{'common.select'|translate}} {{prop.type}}</span>
-                <div class="actions">
-                    <a (click)="selectAll()">{{'common.select_all'|translate}}</a>
-                    <a (click)="dismiss()">{{'common.cancel'|translate}}</a>
-                </div>
+            </div>
+            <div class="actions">
+                <a (click)="selectAll()">{{'common.select_all'|translate}}</a>
+                <a (click)="clearAll()">{{'common.clear_all'|translate}}</a>
+                <a (click)="dismiss()">{{'common.cancel'|translate}}</a>
             </div>
         </ion-toolbar>
         <ion-toolbar>
             <ion-searchbar name="query" [(ngModel)]="query" showCancelButton="focus" (ionChange)="search(query)"
-                           (ionCancel)="cancel()"></ion-searchbar>
+                (ionCancel)="cancel()"></ion-searchbar>
         </ion-toolbar>
     </ion-header>
     <ion-content>
         <ion-list>
             <ion-item lines="none" *ngFor="let entry of list">
                 <ion-label>{{entry.name}}</ion-label>
-                <ion-checkbox slot="start" (click)="select(entry)" name="checkbox"
-                              [(ngModel)]="entry.select"></ion-checkbox>
+                <ion-checkbox slot="start" (click)="select(entry)" name="checkbox" [(ngModel)]="entry.select">
+                </ion-checkbox>
             </ion-item>
         </ion-list>
     </ion-content>

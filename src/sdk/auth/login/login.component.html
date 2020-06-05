@@ -1,0 +1,28 @@
+<app-header></app-header>
+<ion-content>
+  <div class="wrapper">
+    <div class="info">{{'login.title'|translate}}</div>
+
+    <form class="form" [formGroup]="credentials">
+      <ion-item>
+        <ion-label position="stacked">{{'login.supplierId'|translate}}</ion-label>
+        <ion-input type="tel" formControlName="supplier_id"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{'login.email'|translate}}</ion-label>
+        <ion-input #email formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{'login.security_token'|translate}}</ion-label>
+        <ion-input formControlName="token"></ion-input>
+      </ion-item>
+      <!-- <ion-label style="margin-top: 10px;display: inline-block;" position="stacked">{{'login.token_description'|translate}}</ion-label> -->
+    </form>
+    <div class="block_button" style="padding-top: 20px;">
+      <ion-button expand="block" [disabled]="!credentials.valid" (click)="next()">
+        {{'login.next'|translate}} >>
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

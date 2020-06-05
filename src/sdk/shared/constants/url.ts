@@ -1,5 +1,6 @@
-
+import {environment} from 'src/environments/environment';
 const api = 'https://data.hptariane.com/api/';
+
 
 export const APP_URL = {
     auth: {
@@ -8,7 +9,9 @@ export const APP_URL = {
         request_token: api + 'token/mail',
         verify: api + 'token/verify',
         settings_update: api + 'settings/update',
-        reactivate: api + 'reactivate'
+        reactivate: api + 'reactivate',
+        contact: api + 'contact-us',
+        contact_submit: api + 'submit-contact-us'
     },
     homepage: {
         get: api + 'index'

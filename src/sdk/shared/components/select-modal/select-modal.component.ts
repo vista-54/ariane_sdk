@@ -87,18 +87,19 @@ export class SelectModalComponent implements OnInit {
     }
 
     selectAll() {
-        this.isSelectAll = !this.isSelectAll;
-        if (this.isSelectAll) {
-            this.prop.data.map(item => {
-                item.select = true;
-                this.selectedArr.push(item[this.types[this.prop.type]]);
-            });
-        } else {
-            this.prop.data.map(item => {
-                item.select = false;
-            });
-            this.selectedArr = [];
-        }
 
+        this.prop.data.map(item => {
+            item.select = true;
+            this.selectedArr.push(item[this.types[this.prop.type]]);
+        });
+
+
+    }
+
+    clearAll() {
+        this.prop.data.map(item => {
+            item.select = false;
+        });
+        this.selectedArr = [];
     }
 }

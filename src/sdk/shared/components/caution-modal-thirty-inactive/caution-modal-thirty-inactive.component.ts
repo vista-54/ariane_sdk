@@ -21,7 +21,7 @@ export class CautionModalThirtyInactiveComponent implements OnInit {
         this.modalCtrl.dismiss({
             dismissed: true
         });
-        this.router.navigate(['sdk/auth/registration'], {queryParams: {user_id: this.userid}});//for renew need user Id
+        this.router.navigate(['auth/registration'], {queryParams: {user_id: this.userid}});//for renew need user Id
     }
 
 }

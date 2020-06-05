@@ -20,7 +20,7 @@ export class UnregisteredModalComponent extends CommonModalComponent {
         this.modalCtrl.dismiss({
             dismissed: true
         });
-        this.router.navigate(['sdk/auth/registration']);
+        this.router.navigate(['auth/registration']);
     }
 
 }

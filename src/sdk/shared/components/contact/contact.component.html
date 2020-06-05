@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a (click)="dismiss()"><img src="../assets/icon/header_arrow.svg">{{'common.back'|translate}}</a>
+    </ion-buttons>
+    <ion-title><span>{{'common.title1'|translate}}</span><span>{{'common.title2'|translate}}</span></ion-title>
+    <ion-buttons slot="end">
+      <!--For android align-->
+      <ion-button style="opacity: 0;height: 0;">
+        Home
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="wrapper">
+    <div class="info">{{'contact.title'|translate}}</div>
+    <form class="form" [formGroup]="credentials">
+      <ion-item>
+        <ion-label position="stacked">{{'contact.firstname'|translate}}</ion-label>
+        <ion-input  formControlName="firstname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{'contact.lastname'|translate}}</ion-label>
+        <ion-input  formControlName="lastname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{'contact.email'|translate}}</ion-label>
+        <ion-input  formControlName="user_email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{'contact.company'|translate}}</ion-label>
+        <ion-input formControlName="company"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{'contact.subject'|translate}}</ion-label>
+        <ion-input  formControlName="subject"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">{{'contact.message'|translate}}</ion-label>
+        <ion-input  formControlName="message"></ion-input>
+      </ion-item>
+    </form>
+  </div>
+  <ion-button [disabled]="!credentials.valid" expand="block" (click)="submit()">
+    {{'contact.next'|translate}} >>
+  </ion-button>
+</ion-content>

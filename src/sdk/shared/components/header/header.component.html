@@ -5,11 +5,10 @@ background: white;">
      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title><span>HPT Ariane</span><span>Collaboration Platform</span></ion-title>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" (click)="contactPage()">
+      <img class="contact_icon" src="../assets/contact_icon.png">
       <!--For android align-->
-      <ion-button style="opacity: 0;height: 0;">
-        Home
-      </ion-button>
-    </ion-buttons>
+  
+  </ion-buttons>
   </ion-toolbar>
 </ion-header>

@@ -27,13 +27,13 @@
                 <ion-label position="stacked">{{'more.email'|translate}}</ion-label>
                 <ion-input readonly formControlName="email"></ion-input>
             </ion-item>
-            <ion-label class="icon_label">{{'settings.team'|translate}} <img (click)="yourTeam()"
-                                                                             src="../assets/icon_info.svg">
-            </ion-label>
+            <ion-button expand="block" type="submit" (click)="reload()">
+                {{'settings.check_subs'|translate}} >>
+            </ion-button>
             <div class="item_rows">
                 <ion-item>
-                    <ion-label position="stacked">{{'more.subscription'|translate}}</ion-label>
-                    <ion-input readonly formControlName="subscription"></ion-input>
+                    <ion-label position="stacked">{{'more.subscription_name'|translate}}</ion-label>
+                    <ion-input readonly formControlName="subscription_name"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="stacked">{{'settings.renewal'|translate}}</ion-label>

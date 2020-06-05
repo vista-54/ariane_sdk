@@ -33,7 +33,7 @@ export class CautionModalMismatchComponent {
         }, 500);
 
         if (this.counter >= 3) {
-            this.router.navigate(['sdk/auth/registration']);
+            this.router.navigate(['auth/registration']);
         }
     }
 }

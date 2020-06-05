@@ -42,5 +42,6 @@
             </div>
         </div>
     </div>
+    <p class="warn" *ngIf="didNotHaveDataApply">{{'datascope.warn'|translate}}</p>
     <ion-button expand="block" (click)="apply()">{{'datascope.apply'|translate}}</ion-button>
 </ion-content>

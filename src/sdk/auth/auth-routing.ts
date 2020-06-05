@@ -8,6 +8,7 @@ import {MoreInfoComponent} from './more-info/more-info.component';
 import {OptionsComponent} from './options/options.component';
 import {WellDoneComponent} from './well-done/well-done.component';
 import {AuthService} from './shared/services/auth.service';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
     {
@@ -18,6 +19,7 @@ const routes: Routes = [
             {path: 'more-info', component: MoreInfoComponent},
             {path: 'options', component: OptionsComponent},
             {path: 'well-done', component: WellDoneComponent},
+            {path: 'login', component: LoginComponent},
             {path: '', redirectTo: 'welcome', pathMatch: 'full'}
         ]
     }

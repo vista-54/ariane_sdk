@@ -6,7 +6,7 @@ import {ActivatedRouteSnapshot, Resolve, Router} from '@angular/router';
 import {ModalController} from '@ionic/angular';
 import {CautionModalMismatchComponent} from '../../../shared/components/caution-modal-mismatch/caution-modal-mismatch.component';
 import {CautionModalExpiredComponent} from '../../../shared/components/caution-modal-expired/caution-modal-expired.component';
-import {RESPONSE_CODE_LOGIN, RESPONSE_CODE_VERIFY_TOKEN} from '../../../shared/constants/response_code';
+import {RESPONSE_CODE_LOGIN, RESPONSE_CODE_REACTIVATE, RESPONSE_CODE_VERIFY_TOKEN} from '../../../shared/constants/response_code';
 import {TokenSentComponent} from '../../../shared/components/token-sent/token-sent.component';
 import {RegistrationSuccessComponent} from '../../../shared/components/registration-success/registration-success.component';
 import {LoginResponse, RegisterResponse, VerifyTokenResponse} from '../../../shared/interfaces/response';
@@ -92,12 +92,16 @@ export class AuthService implements Resolve<any> {
                     case RESPONSE_CODE_LOGIN.SUBSCRIPTION_EXPIRED:
                         this.commonService.presentModal(CautionModalExpiredComponent);
                         break;
+                    // case RESPONSE_CODE_LOGIN.MULTIPLY_DEVICE:
+                    //     this.commonService.presentModal(MultiplyDeviceErrorModalComponent);
+                    //     break;
                     default:
                         this.commonService.presentModal(CautionModalFailedRetrieveInfoComponent);
                         break;
                 }
             }));
     }
+
 
     requestToken(data: RequestTokenModel) {
         return this.request.post(APP_URL.auth.request_token, data)
@@ -161,10 +165,31 @@ export class AuthService implements Resolve<any> {
 
     reactivate(data) {
         return this.request.post(APP_URL.auth.reactivate, data)
-            .pipe(tap((res: RegisterResponse) => {
-                switch (res.code) {
-                    case RESPONSE_CODE.SUCCESS:
-                        this.commonService.presentModal(ModalReactivationSuccessComponent);
+            .pipe(tap((response: LoginResponse) => {
+                switch (response.code) {
+                    case RESPONSE_CODE_REACTIVATE.SUCCESS:
+                        localStorage['user'] = JSON.stringify(response.info);
+                        localStorage['jwt'] = response.jwt;
+                        break;
+                    case RESPONSE_CODE_REACTIVATE.UNREGISTERED_SUPPLIER:
+                        this.commonService.presentModal(UnregisteredModalComponent);
+                        break;
+                    case RESPONSE_CODE_REACTIVATE.CREDENTIALS_MISMATCH:
+                        this.errorCounterLogin++;
+                        if (this.errorCounterLogin > 1) {
+                            this.commonService.presentModal(ModalSecondWrongCredentialsComponent);
+                        } else {
+                            this.commonService.presentModal(CautionModalMismatchComponent);
+                        }
+                        break;
+                    case RESPONSE_CODE_REACTIVATE.INVALID_TOKEN:
+                        this.errorCounterToken++;
+                        if (this.errorCounterToken >= 3) {
+                            this.commonService.presentModal(CautionInvalidTokenMultitimeComponent);
+                            this.router.navigate(['auth/info1']);
+                        } else {
+                            this.commonService.presentModal(CautionInvalidTokenComponent);
+                        }
                         break;
                     default:
                         this.commonService.presentModal(CautionModalFailedRetrieveInfoComponent);
@@ -173,5 +198,10 @@ export class AuthService implements Resolve<any> {
             }));
     }
 
+    contact(data) {
+        return this.request.post(APP_URL.auth.settings_update, data)
+            .pipe(tap(() => {
+            }));
+    }
 
 }

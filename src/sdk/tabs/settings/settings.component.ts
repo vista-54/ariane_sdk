@@ -4,6 +4,9 @@ import {ModalYourTeamComponent} from '../../shared/components/modal-your-team/mo
 import {ActivatedRoute} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {AuthService} from '../../auth/shared/services/auth.service';
+import {SettingsService} from '../shared/services/settings.service';
+import {SubscriptionUpgradeComponent} from '../../shared/components/subscription-upgrade/subscription-upgrade.component';
+import {RESPONSE_CODE} from '../../shared/constants/response_code';
 
 
 @Component({
@@ -21,7 +24,8 @@ export class SettingsComponent implements OnInit {
     constructor(private modalController: ModalController,
                 private route: ActivatedRoute,
                 private formBuilder: FormBuilder,
-                private auth: AuthService) {
+                private auth: AuthService,
+                private settingService: SettingsService) {
         this.user = JSON.parse(localStorage.user);
 
         this.credentials = this.formBuilder.group({
@@ -30,7 +34,7 @@ export class SettingsComponent implements OnInit {
             company: ['', []],
             firstname: ['', []],
             lastname: ['', []],
-            subscription: ['', []],
+            subscription_name: ['', []],
             renew_date: ['', []],
         });
 
@@ -49,10 +53,11 @@ export class SettingsComponent implements OnInit {
 
     }
 
-    async yourTeam() {
+    async subscriptionModal(url) {
         const modal = await this.modalController.create({
-            component: ModalYourTeamComponent,
-            cssClass: 'shareModal',
+            component: SubscriptionUpgradeComponent,
+            cssClass: 'iframeModal',
+            componentProps: {url}
         });
         return modal.present();
 
@@ -63,7 +68,19 @@ export class SettingsComponent implements OnInit {
             user_id: this.user.userid,
             setting: this.settings
         })
-            .subscribe(success => {
+            .subscribe(() => {
+            });
+    }
+
+    reload() {
+        this.settingService.get()
+            .subscribe((success: APIResponse) => {
+                if (success.code === RESPONSE_CODE.SUCCESS) {
+                    const userInfo = success.result;
+                    this.settings = userInfo.settings;
+                    this.credentials.patchValue(userInfo);
+                    this.subscriptionModal(success.result.url);
+                }
             });
     }
 

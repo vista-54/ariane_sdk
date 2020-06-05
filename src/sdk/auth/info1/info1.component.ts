@@ -1,12 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { AuthService } from '../shared/services/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { IonInput } from '@ionic/angular';
-import { LoginResponse } from '../../shared/interfaces/response';
-import { RESPONSE_CODE } from '../../shared/constants/response';
-import { BehaviorSubject } from 'rxjs';
-import { CommonService } from '../../shared/services/common.service';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {AuthService} from '../shared/services/auth.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {IonInput} from '@ionic/angular';
+import {LoginResponse} from '../../shared/interfaces/response';
+import {RESPONSE_CODE} from '../../shared/constants/response';
+import {BehaviorSubject} from 'rxjs';
+import {RequestTokenModel} from '../shared/models/requestToken.model';
+import {CommonService} from '../../shared/services/common.service';
 
 
 @Component({
@@ -17,11 +18,12 @@ import { CommonService } from '../../shared/services/common.service';
 export class Info1Component implements OnInit {
 
     public credentials: FormGroup;
-    @ViewChild('email', { static: false }) inputElement: IonInput;
+    @ViewChild('email', {static: false}) inputElement: IonInput;
+
     constructor(private auth: AuthService,
-        private formBuilder: FormBuilder,
-        public router: Router,
-        public commonService: CommonService) {
+                private formBuilder: FormBuilder,
+                public router: Router,
+                public commonService: CommonService) {
         this.credentials = this.formBuilder.group({
             email: ['', [Validators.required]],
             supplier_id: ['', [Validators.required]],
@@ -30,7 +32,7 @@ export class Info1Component implements OnInit {
             if (data.event === 'login:error') {
                 this.inputElement.setFocus();
             }
-        })
+        });
         const loginCredentials = localStorage.getItem('login');
         if (loginCredentials) {
             this.credentials.patchValue(JSON.parse(loginCredentials));
@@ -46,15 +48,23 @@ export class Info1Component implements OnInit {
      *
      */
     next() {
-        this.auth.login(this.credentials.value).subscribe(success => {
+        this.auth.login(this.credentials.value).subscribe((result: LoginResponse) => {
             localStorage.setItem('login', JSON.stringify(this.credentials.value));
-            const result = success as LoginResponse;
             if (result.code === RESPONSE_CODE.SUCCESS) {
-                this.router.navigate(['sdk/auth/more-info']);
+                this.requestToken(result.info.userid);
             } else {
                 this.inputElement.setFocus();
             }
         });
+    }
+
+    requestToken(user_id) {
+        const data: RequestTokenModel = {user_id};
+        this.auth.requestToken(data)
+            .subscribe(success => {
+                this.router.navigate(['sdk/auth/more-info']);
+                console.log(success);
+            });
     }
 
 

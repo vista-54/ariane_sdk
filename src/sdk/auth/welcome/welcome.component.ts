@@ -25,6 +25,10 @@ export class WelcomeComponent implements OnInit {
 
     openLink(link) {
         this.iab.create(link, '_system');
+    }  
+
+    login(){
+        this.router.navigate(['sdk/auth/login']);
     }
 
     next() {

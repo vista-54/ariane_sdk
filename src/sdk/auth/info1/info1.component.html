@@ -3,9 +3,9 @@
     <div class="wrapper">
         <div class="info">{{'info.title'|translate}}</div>
         <div class="progress">
-            <div class="progress_item current"><span>1</span><br><span>{{'info.title'|translate}}</span></div>
+            <div class="progress_item current"><span>1</span><br><span>{{'info.title_old'|translate}}</span></div>
             <span class="connect inactive"></span>
-            <div class="progress_item inactive"><span>2</span><br><span>{{'more.title'|translate}}</span></div>
+            <div class="progress_item inactive"><span>2</span><br><span>{{'more.title_old'|translate}}</span></div>
             <span class="connect inactive"></span>
             <div class="progress_item inactive"><span>3</span><br><span>{{'options.title'|translate}}</span></div>
         </div>
@@ -19,15 +19,10 @@
                 <ion-input #email formControlName="email"></ion-input>
             </ion-item>
         </form>
-        <div>
-            <p class="note">{{'info.note1'|translate}}</p>
+        <div class="block_button">
             <ion-button expand="block" [disabled]="!credentials.valid" (click)="next()">
                 {{'info.next'|translate}} >>
             </ion-button>
-            <p class="note"><b>{{'info.note2'|translate}}</b>
-                {{'info.note3'|translate}}
-                <a href="mailto:customercare@hptariane.com">customercare@hptariane.com</a>.</p>
-            <p class="note">{{'info.note4'|translate}}</p>
         </div>
     </div>
 

@@ -4,17 +4,26 @@
     "subtitle1": "Welcome to",
     "subtitle2": "HPT Ariane Mobile App",
     "description": "You are few steps away from business insights to grow your sales and business performances.",
-    "start": "Let’s Start"
+    "start": "Login"
   },
   "info": {
-    "title": "info",
+    "title": "request token",
+    "title_old":"info",
     "supplierId": "Supplier ID",
     "email": "Email",
     "note1": "Please enter your supplier ID and email address to verify your subscription.",
     "note2": "The security token will be sent to the administrator of your company.",
     "note3": "If you did not receive the email, please contact",
     "note4": "The security token will expire in 30 days.",
-    "next": "Request Token"
+    "next": "Request Security Token"
+  },
+  "login": {
+    "title": "login",
+    "supplierId": "Supplier ID",
+    "email": "Email",
+    "security_token": "Security Token",
+    "token_description":"Security token valid until",
+    "next": "Login"
   },
   "m_unregister": {
     "header": " CAUTION!",
@@ -56,7 +65,8 @@
     "renew": "Renew"
   },
   "more": {
-    "title": "more info",
+    "title": "security token",
+    "title_old":"more info",
     "company": "Company Name",
     "firstname": "First Name",
     "lastname": "Last Name",
@@ -66,14 +76,16 @@
     "phone": "Mobile Phone",
     "code": "Please enter your security token here",
     "request": "Request a Security Token",
-    "next": "Next"
+    "next": "Next",
+    "subscription_name": "Subscription Name"
   },
   "m_token_sent": {
-    "header": "The security token is sent!",
+    "header": "The security token sent!",
     "p1": "Your request has been received!",
-    "p2": "The security token is sent to your registered email. If you do not receive the email, please check with your administrator.",
-    "p3": "The security token will expire in 30 days.",
-    "button": "Ok"
+    "p2": "The security token has been sent to your email.",
+    "p3": "If you do not receive it, please check your spam folder or contact your administrator.",
+    "p4": "The security token will expire in on",
+    "button": "I received the token"
   },
   "m_token_expired": {
     "header": "CAUTION!",
@@ -109,7 +121,8 @@
   },
   "well": {
     "title": "Well Done!",
-    "button": "Go To Homepage"
+    "description":"Your dashboard has been created.",
+    "button": "Homepage"
   },
   "home": {
     "welcome": "Welcome,",
@@ -131,7 +144,7 @@
   "tabs": {
     "store": "Store Visit",
     "todo": "To Do",
-    "settings": "Settings",
+    "settings": "Account",
     "tutorial": "Tutorial"
   },
   "datascope": {
@@ -143,7 +156,8 @@
     "subcategory": "SUB CATEGORY",
     "brand": "BRAND",
     "product": "PRODUCT",
-    "apply": "Apply Change"
+    "apply": "Apply Change",
+    "warn":"Data scope updated; click button to refresh data"
   },
   "common": {
     "back": "Back",
@@ -152,6 +166,7 @@
     "title2": "Collaboration Platform",
     "select": "Select",
     "select_all": "Select All",
+    "clear_all": "Clear All",
     "cancel": "Cancel",
     "ok": "Ok",
     "store_name": "Store name",
@@ -175,7 +190,8 @@
     "store_alerts": "Store Alerts",
     "upload_alert": "Data Upload Alert",
     "lang": "Language",
-    "save": "Save Settings"
+    "save": "Save Settings",
+    "check_subs":"Check/Upgrade subscription"
   },
   "m_your_team": {
     "title": "Information",
@@ -263,5 +279,17 @@
   "m_about": {
     "header": "Want to Know More?",
     "p1": "To access more data and discover valuable insights, kindly download the HPT Ariane Mobile App from the"
+  },
+  "contact":{
+    "title":"Contact Us",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "email": "Email Address",
+    "company": "Company Name",
+
+    "subject": "Subject",
+    "message": "Message",
+
+    "next": "Send Message"
   }
 }

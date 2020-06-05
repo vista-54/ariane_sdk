@@ -6,7 +6,7 @@ export declare interface LoginResponse {
     message: string;
     jwt: string;
     info: User;
-    userid?: string;
+    userid?: number;
 }
 
 export declare interface RequestTokenResponse {

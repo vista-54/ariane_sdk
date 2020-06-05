@@ -26,3 +26,10 @@ export const RESPONSE_CODE = {
     SUCCESS: '0',
 
 };
+export const RESPONSE_CODE_REACTIVATE = {
+    SUCCESS: '0',
+    UNREGISTERED_SUPPLIER: '1',
+    CREDENTIALS_MISMATCH: '2',
+    INVALID_TOKEN: '3',
+
+};

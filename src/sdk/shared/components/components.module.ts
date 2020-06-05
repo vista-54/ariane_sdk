@@ -35,6 +35,8 @@ import {AccessDaniedComponent} from './access-danied/access-danied.component';
 import {ServerErrorModalComponent} from './server-error-modal/server-error-modal.component';
 import {ModalSecondWrongCredentialsComponent} from './modal-second-wrong-credentials/modal-second-wrong-credentials.component';
 import {ModalTokenExpiredComponent} from './modal-token-expired/modal-token-expired.component';
+import {ContactComponent} from './contact/contact.component';
+import {SubscriptionUpgradeComponent} from './subscription-upgrade/subscription-upgrade.component';
 
 
 @NgModule({
@@ -68,7 +70,9 @@ import {ModalTokenExpiredComponent} from './modal-token-expired/modal-token-expi
         AccessDaniedComponent,
         ServerErrorModalComponent,
         ModalSecondWrongCredentialsComponent,
-        ModalTokenExpiredComponent
+        ModalTokenExpiredComponent,
+        ContactComponent,
+        SubscriptionUpgradeComponent
     ],
     imports: [
         IonicModule,
@@ -107,7 +111,9 @@ import {ModalTokenExpiredComponent} from './modal-token-expired/modal-token-expi
         AccessDaniedComponent,
         ServerErrorModalComponent,
         ModalSecondWrongCredentialsComponent,
-        ModalTokenExpiredComponent
+        ModalTokenExpiredComponent,
+        ContactComponent,
+        SubscriptionUpgradeComponent
     ],
     entryComponents: [CautionModalMismatchComponent,
         CautionModalExpiredComponent, HeaderComponent, TokenSentComponent, RegistrationSuccessComponent, UnregisteredModalComponent,
@@ -134,7 +140,9 @@ import {ModalTokenExpiredComponent} from './modal-token-expired/modal-token-expi
         AccessDaniedComponent,
         ServerErrorModalComponent,
         ModalSecondWrongCredentialsComponent,
-        ModalTokenExpiredComponent
+        ModalTokenExpiredComponent,
+        ContactComponent,
+        SubscriptionUpgradeComponent
     ],
     providers: [
         HomeService

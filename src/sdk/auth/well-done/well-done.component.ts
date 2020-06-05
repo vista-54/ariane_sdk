@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-well-done',
@@ -7,10 +8,17 @@ import {Component, OnInit} from '@angular/core';
 })
 export class WellDoneComponent implements OnInit {
 
-    constructor() {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {
+        setTimeout(() => {
+            this.goHomepage()
+        }, 2000)
+    }
+
+    goHomepage() {
+        this.router.navigate(['sdk/tabs/home']);
     }
 
 }

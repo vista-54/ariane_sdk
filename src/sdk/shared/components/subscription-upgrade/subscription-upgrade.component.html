@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <a (click)="dismiss()"><img src="../assets/icon/header_arrow.svg">{{'common.home'|translate}}</a>
+    </ion-buttons>
+    <ion-title><span>{{'common.title1'|translate}}</span><span>{{'common.title2'|translate}}</span></ion-title>
+    <ion-buttons slot="end">
+      <!--For android align-->
+      <ion-button style="opacity: 0;height: 0;">
+        Home
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <iframe [src]="getUrl()"></iframe>
+</ion-content>

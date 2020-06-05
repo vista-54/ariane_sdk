@@ -17,12 +17,13 @@ import {DirectiveModule} from '../shared/directives/directive.module';
 import {RouterModule} from '@angular/router';
 import {SharedModule} from '../shared/shared.module';
 import {CommonService} from '../shared/services/common.service';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
     declarations: [AuthComponent,
         WelcomeComponent, Info1Component, RegistrationComponent, MoreInfoComponent,
-        OptionsComponent, WellDoneComponent],
+        OptionsComponent, WellDoneComponent, LoginComponent],
     imports: [
         CommonModule,
         AuthRouting,

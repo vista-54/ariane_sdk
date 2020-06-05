@@ -20,13 +20,17 @@
           width: 50%;
           font-size: 21px;
           text-transform: capitalize;
+          margin: 0 auto;
         }
-        .actions {
-          display: flex;
-          justify-content: space-between;
-          width: 50%;
-          font-size: 17px;
-        }
+      
+      }
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        font-size: 17px;
       }
       ion-searchbar {
         --background: rgba(142, 142, 147, 0.1);
@@ -46,11 +50,11 @@
     --offset-top: 0px !important;
 
     ion-list {
-      padding-bottom: 90px;
+      padding-bottom: 110px;
       margin-bottom: 32px;
       ion-item {
-        --padding-top: 16px;
-        --padding-bottom: 16px;
+        --padding-top: 4px;
+        --padding-bottom: 4px;
         border-bottom: 1px solid #f1f1f1;
         ion-label {
           --color: #1a82f2;

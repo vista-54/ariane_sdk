@@ -7,7 +7,7 @@ import { VerifyTokenResponse } from '../../shared/interfaces/response';
 import { IonInput } from '@ionic/angular';
 import { VerifyTokenModel } from '../shared/models/verifyToken.model';
 import { RequestTokenModel } from '../shared/models/requestToken.model';
-import { CommonService } from '../../shared/services/common.service';
+import {CommonService} from '../../shared/services/common.service';
 
 @Component({
     selector: 'app-more-info',
